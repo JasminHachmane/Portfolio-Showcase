@@ -9,8 +9,7 @@ import {
   Pencil,
   Code2,
   Send,
-  Sun,
-  Moon,
+  Menu,
 } from "lucide-react";
 
 const projects = [
@@ -18,87 +17,142 @@ const projects = [
     number: "01",
     title: "Mijn Sprookje",
     category: "Gen-AI · UX/UI · Web app",
-    role: "UX/UI Design · User testing · Concepting",
-    tools: ["Figma", "ReplicateAPI", "User testing", "Web app"],
-    text: "A playful Gen-AI storytelling web app for children aged 4 to 6, created for Efteling in collaboration with Mach8 and LiveWall.",
-    color: "bg-[#d99aa0]",
-    href: "#mijn-sprookje",
+    text: "A playful AI storytelling concept for children, created through research, testing and visual design.",
+    image: "/images/project-1.jpg",
+    color: "bg-[#e8a7b2]",
+    details: {
+      client: "Efteling · Mach8 · LiveWall",
+      role: "UX/UI design · Research · User testing · Concepting",
+      tools: ["Figma", "User testing", "AI concepting", "Storytelling", "UX research"],
+      problem:
+        "Children are reading less, while Efteling wanted to explore how interactive storytelling and AI could make fairy tales more playful, visual and engaging.",
+      goal:
+        "Create a child-friendly Gen-AI storytelling experience where children aged 4 to 6 can visually create and personalize their own fairy tale.",
+      process: [
+        "Researched the Efteling Sprookjesbos, storytelling apps and the target audience.",
+        "Interviewed children and collected insights about visuals, fantasy, humor and interaction.",
+        "Created moodboards, wireframes and visual concepts based on the children’s needs.",
+        "Tested the concept with young users and improved the flow based on feedback.",
+      ],
+      result:
+        "The final concept became a playful web app where children can choose characters, settings and story elements in a simple visual way.",
+      reflection:
+        "This project taught me that designing for young children requires simplicity, strong visuals and constant testing.",
+    },
   },
   {
     number: "02",
     title: "Aurora Studio",
-    category: "Branding · Web Design",
-    role: "Brand identity · Stylescapes · Website refresh",
-    tools: ["Figma", "Brand guide", "Moodboards", "Web design"],
-    text: "A creative brand identity for a fictional design studio, developed from moodboards to a full brand guide and refreshed website.",
-    color: "bg-[#8e9679] text-[#fff8ef]",
-    href: "#projects",
+    category: "Branding · Web design",
+    text: "A soft, elegant brand identity translated into a visual system and website design.",
+    image: "/images/project-2.jpg",
+    color: "bg-[#a8b39b]",
+    details: {
+      client: "Aurora Studio",
+      role: "Brand identity · Stylescapes · Website design",
+      tools: ["Figma", "Brand guide", "Moodboards", "Web design"],
+      problem: "The studio needed a clear visual identity that felt calm, elegant and professional.",
+      goal: "Create a consistent brand identity and website direction.",
+      process: [
+        "Created moodboards and stylescapes.",
+        "Explored logo directions, colors and typography.",
+        "Collected feedback from teachers and team members.",
+        "Translated the brand identity into a website design.",
+      ],
+      result: "A refined visual identity with a soft color palette, elegant typography and calm website style.",
+      reflection: "I learned how important consistency is in branding.",
+    },
   },
   {
     number: "03",
-    title: "Web Design",
-    category: "Frontend · Portfolio experiments",
-    role: "Layouts · Interactions · Personal style",
-    tools: ["HTML", "CSS", "JavaScript", "React"],
-    text: "A collection of web design experiments, including my first personal portfolio and the Aurora Studio website.",
-    color: "bg-[#ead9be]",
-    href: "#projects",
+    title: "Dezcartes",
+    category: "UX research · Prototype",
+    text: "A card game platform developed through research, user testing, iterations and technical choices.",
+    image: "/images/project-3.jpg",
+    color: "bg-[#eadcc7]",
+    details: {
+      client: "Dezcartes project",
+      role: "UX research · Testing · UI advice · Technical realisation",
+      tools: ["Figma", "React", "User testing", "Git", "Research"],
+      problem: "The project needed a digital platform that supported the physical card game experience.",
+      goal: "Design and develop a user-friendly platform with cards, challenges and gameplay features.",
+      process: [
+        "Researched card game platforms and user needs.",
+        "Created requirements and user stories.",
+        "Tested card designs and platform flows.",
+        "Improved the prototype based on feedback.",
+      ],
+      result: "A stronger digital concept with clearer navigation and better physical-digital connection.",
+      reflection: "This project helped me grow in research, communication, testing and technical decision-making.",
+    },
   },
   {
     number: "04",
-    title: "iOS Concepts",
-    category: "Mobile app · Swift principles",
-    role: "Concept · UX flow · Testing · Product thinking",
-    tools: ["Swift", "iOS design", "UX", "Testing"],
-    text: "Mobile app concepts created with Swift principles, from first idea to design, testing and final product thinking.",
-    color: "bg-[#3c2b25] text-[#fff8ef]",
-    href: "#projects",
+    title: "Portfolio",
+    category: "React · Tailwind · Framer Motion",
+    text: "My personal showcase portfolio, designed as a layered digital scrapbook.",
+    image: "/images/project-4.jpg",
+    color: "bg-[#d8b08c]",
+    details: {
+      client: "Personal showcase portfolio",
+      role: "Design · Front-end development · Reflection · Documentation",
+      tools: ["React", "Tailwind CSS", "Framer Motion", "Git", "Vercel"],
+      problem: "My first portfolio version felt too flat and looked like separate blocks.",
+      goal: "Create a personal, responsive and layered showcase portfolio.",
+      process: [
+        "Created a scrapbook moodboard.",
+        "Translated feedback from Chris into layered components.",
+        "Built reusable React components.",
+        "Tested responsiveness while developing.",
+      ],
+      result: "A responsive digital scrapbook portfolio with layered visuals and project case pages.",
+      reflection: "I learned how to translate a visual concept into code while keeping usability in mind.",
+    },
   },
 ];
 
-const processSteps = [
-  {
-    number: "01",
-    title: "Discover",
-    icon: Search,
-    text: "Research, inspiration and user goals.",
-    color: "bg-[#e7b4bd]",
-  },
-  {
-    number: "02",
-    title: "Design",
-    icon: Pencil,
-    text: "Wireframes, visual direction and prototypes.",
-    color: "bg-[#eadcc7]",
-  },
-  {
-    number: "03",
-    title: "Develop",
-    icon: Code2,
-    text: "Clean code, interactions and responsive design.",
-    color: "bg-[#a8b39b]",
-  },
-  {
-    number: "04",
-    title: "Deliver",
-    icon: Send,
-    text: "Testing, feedback and final polish.",
-    color: "bg-[#f0ddc4]",
-  },
+const steps = [
+  { number: "01", title: "Discover", icon: Search, text: "Research, inspiration, user goals and feedback." },
+  { number: "02", title: "Design", icon: Pencil, text: "Moodboards, wireframes, visual direction and prototypes." },
+  { number: "03", title: "Develop", icon: Code2, text: "React components, Tailwind styling and responsive layouts." },
+  { number: "04", title: "Deliver", icon: Send, text: "Testing, polishing, documenting and presenting my growth." },
 ];
 
 function Texture() {
   return (
-    <div className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-multiply">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#3a2b28_1px,transparent_1px)] [background-size:18px_18px]" />
-    </div>
+    <>
+      <div className="pointer-events-none absolute inset-0 opacity-[0.18] mix-blend-multiply bg-[url('/textures/paper.jpg')] bg-cover" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_1px_1px,#3a2b28_1px,transparent_0)] [background-size:19px_19px]" />
+    </>
   );
 }
 
 function Tape({ className = "" }) {
   return (
+    <img
+      src="/decor/tape-2.png"
+      alt=""
+      onError={(e) => (e.currentTarget.style.display = "none")}
+      className={`pointer-events-none absolute z-30 w-28 drop-shadow-md ${className}`}
+    />
+  );
+}
+
+function Decor({ src, className = "" }) {
+  return (
+    <img
+      src={src}
+      alt=""
+      onError={(e) => (e.currentTarget.style.display = "none")}
+      className={`pointer-events-none absolute z-20 ${className}`}
+    />
+  );
+}
+
+function PaperLayer({ className = "" }) {
+  return (
     <div
-      className={`absolute h-7 w-24 rotate-[-5deg] rounded-sm bg-[#d9c4a6]/70 shadow-sm backdrop-blur-sm ${className}`}
+      className={`pointer-events-none absolute bg-[#fff8ef]/70 shadow-[12px_12px_0_rgba(58,43,40,0.08)] ${className}`}
     />
   );
 }
@@ -106,18 +160,40 @@ function Tape({ className = "" }) {
 function Stamp({ children, className = "" }) {
   return (
     <div
-      className={`inline-flex rotate-[-8deg] items-center justify-center rounded-full border border-[#b88674] px-4 py-3 text-center font-serif text-[10px] uppercase tracking-[0.18em] text-[#b88674] ${className}`}
+      className={`inline-flex rotate-[-8deg] items-center justify-center border border-[#b5796d] bg-[#fff8ef]/75 px-5 py-4 text-center font-serif text-[10px] uppercase tracking-[0.18em] text-[#b5796d] shadow-sm ${className}`}
     >
       {children}
     </div>
   );
 }
 
-function ScrollReveal({ children, delay = 0, rotate = 0 }) {
+function Note({ children, className = "" }) {
+  return (
+    <div className={`relative rotate-[-3deg] bg-[#fff2a9] p-5 shadow-xl ${className}`}>
+      <Tape className="left-8 top-[-18px] rotate-[-5deg]" />
+      <p className="font-serif text-lg italic leading-relaxed text-[#3a2b28]">{children}</p>
+    </div>
+  );
+}
+
+function Polaroid({ image, caption, className = "" }) {
+  return (
+    <div className={`relative bg-[#fffaf3] p-3 pb-10 shadow-2xl ${className}`}>
+      <Tape className="left-12 top-[-16px] rotate-[-6deg]" />
+      <div
+        className="h-72 bg-[#eadcc7] bg-cover bg-center shadow-inner sm:h-80"
+        style={{ backgroundImage: `url(${image})` }}
+      />
+      <p className="mt-3 text-center font-serif text-lg italic text-[#3a2b28]">{caption}</p>
+    </div>
+  );
+}
+
+function Reveal({ children, delay = 0 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 55, rotate }}
-      whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+      initial={{ opacity: 0, y: 45 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.14 }}
       transition={{ duration: 0.75, delay, ease: [0.22, 1, 0.36, 1] }}
     >
@@ -126,110 +202,183 @@ function ScrollReveal({ children, delay = 0, rotate = 0 }) {
   );
 }
 
-function Hero() {
+function ProjectDetail({ project, onBack }) {
   return (
-    <section
-      id="home"
-      className="grid min-h-[620px] overflow-hidden rounded-[2rem] bg-[#241916] text-[#fff8ef] shadow-[0_25px_70px_rgba(58,43,40,0.2)] lg:grid-cols-[250px_1fr]"
-    >
-      <aside className="relative hidden bg-[#2d211d] p-8 lg:block">
-        <p className="font-serif text-3xl italic text-[#f2c3c9]">Jasmin.</p>
+    <section className="relative z-40 -mt-20 overflow-visible px-6 py-24 md:px-10 lg:px-14">
+      <PaperLayer className="left-4 top-12 h-[92%] w-[94%] rotate-[-1deg] bg-[#f7eadb]" />
+      <Decor src="/decor/sparkle.png" className="right-12 top-12 hidden w-16 rotate-12 md:block" />
 
-        <div className="absolute left-8 top-44 space-y-3 text-[11px] uppercase tracking-[0.18em] text-white/65">
-          <p>Creative</p>
-          <p>ICT Media</p>
-          <p>Student</p>
-          <div className="my-6 h-px w-12 bg-white/25" />
-          <p>Based in</p>
-          <p>The Netherlands</p>
-        </div>
+      <div className="relative z-10 mx-auto max-w-[1400px]">
+        <button
+          onClick={onBack}
+          className="mb-8 inline-flex items-center gap-2 bg-[#3a2b28] px-5 py-3 text-sm font-bold text-[#fff8ef] shadow-xl transition hover:gap-4"
+        >
+          ← Back to all projects
+        </button>
 
-        <p className="absolute bottom-8 left-8 text-xs uppercase tracking-[0.12em] text-white/70">
-          ↓ Scroll to explore
-        </p>
-      </aside>
-
-      <div className="relative min-h-[620px] p-7 sm:p-10 lg:p-14">
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(36,25,22,.95),rgba(36,25,22,.55)),url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center" />
-        <Texture />
-
-        <nav className="relative z-20 mb-16 flex items-center justify-between text-xs uppercase tracking-[0.14em] text-white/80">
-          <div className="hidden gap-9 md:flex">
-            <a href="#home" className="border-b border-white pb-1">
-              Home
-            </a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#process">Process</a>
-            <a href="#contact">Contact</a>
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <Polaroid image={project.image} caption={`${project.title} · case study`} className="rotate-[-3deg]" />
+            <Note className="mt-8">{project.details.reflection}</Note>
           </div>
 
-          <button className="ml-auto rounded-full border border-white/25 px-5 py-3">
-            Open diary
-          </button>
-        </nav>
+          <div className="relative bg-[#fffaf3] p-7 shadow-2xl md:p-10">
+            <Tape className="right-16 top-[-18px] rotate-[5deg]" />
 
-        <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_.9fr]">
-          <div className="max-w-xl pt-10">
-            <p className="mb-2 font-serif text-4xl italic text-[#e8a7b2]">
-              The
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">
+              Case study {project.number}
             </p>
 
-            <h1 className="font-serif text-7xl leading-[0.86] tracking-[-0.05em] sm:text-8xl">
-              Jasmin
-              <br />
-              Archives
-            </h1>
+            <h2 className="font-serif text-5xl leading-tight text-[#2d211d] md:text-7xl">
+              {project.title}
+            </h2>
 
-            <p className="mt-7 max-w-md text-lg leading-relaxed text-white/84">
-              Creative ICT Media student crafting digital experiences with
-              purpose, personality and feeling.
+            <p className="mt-3 text-xs font-bold uppercase tracking-[0.14em] text-[#a06055]">
+              {project.category}
             </p>
 
-            <motion.a
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              href="#projects"
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#f1bdc8] px-6 py-4 text-sm font-bold uppercase tracking-[0.13em] text-[#3a2b28] shadow-xl"
-            >
-              Explore my world <ArrowRight size={18} />
-            </motion.a>
-          </div>
+            <div className="mt-8 grid gap-5 md:grid-cols-2">
+              <div className="bg-[#f7eadb] p-5 shadow-md">
+                <h3 className="font-serif text-3xl">Client</h3>
+                <p className="mt-2 text-[#4d3b35]">{project.details.client}</p>
+              </div>
 
-          <div className="relative min-h-[390px]">
-            <motion.div
-              initial={{ rotate: 4, y: 20, opacity: 0 }}
-              animate={{ rotate: 4, y: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="absolute right-2 top-0 w-[260px] rounded-xl bg-[#fff8ef] p-4 text-[#3a2b28] shadow-2xl sm:w-[310px]"
-            >
-              <Tape className="left-20 top-[-12px]" />
-
-              <div className="h-72 rounded-lg bg-[url('/images/me.jpg')] bg-cover bg-center" />
-
-              <p className="mt-4 font-serif text-lg italic">
-                Designing tomorrow’s digital experiences ♡
-              </p>
-            </motion.div>
-
-            <div className="absolute bottom-20 left-6 rotate-[-10deg] rounded-xl bg-[#d99aa0] p-5 text-sm font-bold uppercase tracking-[0.16em] text-[#fff8ef] shadow-xl">
-              Good ideas
-              <br />
-              start here
+              <div className="bg-[#f7eadb] p-5 shadow-md">
+                <h3 className="font-serif text-3xl">My role</h3>
+                <p className="mt-2 text-[#4d3b35]">{project.details.role}</p>
+              </div>
             </div>
 
-            <Stamp className="absolute right-4 top-2 hidden text-[#e9b6bf] sm:flex">
-              Creative
-              <br />
-              2026
-              <br />
-              Stories
-            </Stamp>
+            <div className="mt-8 flex flex-wrap gap-2">
+              {project.details.tools.map((tool) => (
+                <span key={tool} className="bg-[#eadcc7] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em]">
+                  {tool}
+                </span>
+              ))}
+            </div>
 
-            <p className="absolute bottom-2 right-10 font-serif text-4xl italic text-[#e8a7b2]">
-              Paris, France ♡
-            </p>
+            <div className="mt-10 space-y-8">
+              <div>
+                <h3 className="font-serif text-4xl text-[#2d211d]">Problem</h3>
+                <p className="mt-3 leading-relaxed text-[#4d3b35]">{project.details.problem}</p>
+              </div>
+
+              <div>
+                <h3 className="font-serif text-4xl text-[#2d211d]">Goal</h3>
+                <p className="mt-3 leading-relaxed text-[#4d3b35]">{project.details.goal}</p>
+              </div>
+
+              <div>
+                <h3 className="font-serif text-4xl text-[#2d211d]">Process</h3>
+                <div className="mt-4 grid gap-3">
+                  {project.details.process.map((item, index) => (
+                    <div key={item} className="flex gap-3 bg-[#f7eadb] p-4 shadow-sm">
+                      <span className="font-serif text-xl text-[#b5796d]">0{index + 1}</span>
+                      <p className="leading-relaxed text-[#4d3b35]">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-serif text-4xl text-[#2d211d]">Result</h3>
+                <p className="mt-3 leading-relaxed text-[#4d3b35]">{project.details.result}</p>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Hero() {
+  return (
+    <section id="home" className="relative min-h-[760px] overflow-visible px-6 pb-36 pt-8 md:px-10 lg:px-14">
+      <Texture />
+
+      <PaperLayer className="left-3 top-10 h-[88%] w-[96%] rotate-[-1deg] bg-[#f5eadc]" />
+      <PaperLayer className="right-8 top-24 hidden h-72 w-56 rotate-[7deg] bg-[#e8a7b2]/50 md:block" />
+      <PaperLayer className="left-10 bottom-16 hidden h-56 w-80 rotate-[-5deg] bg-[#d8c49f]/60 lg:block" />
+
+      <Decor src="/decor/flower.png" className="right-10 top-24 hidden w-20 rotate-12 md:block" />
+      <Decor src="/decor/sparkle.png" className="left-1/2 top-28 hidden w-14 md:block" />
+      <Decor src="/decor/heart.png" className="bottom-24 left-16 hidden w-14 -rotate-12 lg:block" />
+
+      <header className="relative z-40 mx-auto flex max-w-[1500px] items-center justify-between gap-4">
+        <div className="relative rotate-[-2deg] bg-[#fff8ef] px-7 py-4 shadow-xl">
+          <Tape className="left-3 top-[-17px] w-24 rotate-[-8deg]" />
+          <p className="font-serif text-3xl italic text-[#2d211d]">Jasmin.</p>
+        </div>
+
+        <nav className="hidden items-center gap-8 text-xs font-bold uppercase tracking-[0.16em] text-[#2d211d] md:flex">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button className="bg-[#3a2b28] p-4 text-[#fff8ef] md:hidden">
+          <Menu size={20} />
+        </button>
+      </header>
+
+      <div className="relative z-10 mx-auto mt-16 grid max-w-[1500px] items-center gap-12 lg:grid-cols-[1fr_0.95fr]">
+        <div>
+          <p className="font-serif text-5xl italic text-[#c47777] md:text-6xl">The</p>
+
+          <h1 className="mt-1 font-serif text-6xl leading-[0.88] tracking-[-0.05em] text-[#2d211d] sm:text-7xl md:text-8xl lg:text-9xl">
+            Jasmin
+            <br />
+            Archives
+          </h1>
+
+          <p className="mt-6 max-w-md text-xs font-bold uppercase tracking-[0.22em] text-[#a06055]">
+            ICT Media Design · Showcase Portfolio
+          </p>
+
+          <p className="mt-5 max-w-lg text-lg leading-relaxed text-[#4d3b35]">
+            A layered digital scrapbook about my projects, process, feedback, technical growth and personal development.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a href="#projects" className="inline-flex items-center gap-3 bg-[#241916] px-6 py-4 text-sm font-bold text-[#fff8ef] shadow-xl transition hover:gap-5">
+              Explore my work <ArrowRight size={17} />
+            </a>
+
+            <a href="#process" className="inline-flex items-center gap-3 bg-[#fff8ef] px-6 py-4 text-sm font-bold text-[#3a2b28] shadow-xl transition hover:gap-5">
+              View process <ArrowRight size={17} />
+            </a>
+          </div>
+        </div>
+
+        <div className="relative min-h-[520px]">
+          <PaperLayer className="left-4 top-12 hidden h-[410px] w-[300px] rotate-[-8deg] bg-[#d8c49f]/70 sm:block" />
+          <PaperLayer className="right-2 top-2 h-[430px] w-[285px] rotate-[6deg] bg-[#e7b4bd]/60 sm:w-[350px]" />
+
+          <motion.div
+            initial={{ rotate: 5, opacity: 0, y: 30 }}
+            animate={{ rotate: 5, opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="absolute right-3 top-8 w-[285px] bg-[#fffaf3] p-4 pb-12 shadow-2xl sm:w-[360px]"
+          >
+            <Tape className="left-20 top-[-18px] rotate-[-6deg]" />
+            <div className="h-[320px] bg-[#eadcc7] bg-[url('/images/me.jpg')] bg-cover bg-center shadow-inner sm:h-[370px]" />
+            <p className="mt-4 text-center font-serif text-xl italic text-[#3a2b28]">Designing with feeling ♡</p>
+          </motion.div>
+
+          <Note className="absolute bottom-8 left-0 max-w-[230px] sm:left-10">
+            Chris told me to think in layers, not blocks.
+          </Note>
+
+          <Stamp className="absolute bottom-28 right-1 hidden md:flex">
+            Creative
+            <br />
+            2026
+            <br />
+            Portfolio
+          </Stamp>
         </div>
       </div>
     </section>
@@ -238,133 +387,42 @@ function Hero() {
 
 function About() {
   return (
-    <section
-      id="about"
-      className="relative overflow-hidden rounded-[2rem] bg-[#fff5ec] p-8 shadow-[0_15px_45px_rgba(58,43,40,0.1)] lg:p-12"
-    >
-      <Texture />
+    <section id="about" className="relative z-20 -mt-28 overflow-visible px-6 py-24 md:px-10 lg:px-14">
+      <PaperLayer className="left-6 top-10 h-[90%] w-[94%] rotate-[1deg] bg-[#f7eadb]" />
+      <PaperLayer className="right-20 bottom-10 hidden h-48 w-72 rotate-[-4deg] bg-[#a8b39b]/35 lg:block" />
+      <Decor src="/decor/sparkle.png" className="right-12 top-12 hidden w-16 rotate-12 md:block" />
 
-      <div className="relative z-10">
-        <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#d08491]">
-              About me
-            </p>
-
-            <h2 className="max-w-4xl font-serif text-5xl leading-tight text-[#2d211d] md:text-7xl">
-              Jasmin
-            </h2>
+      <div className="relative z-10 mx-auto grid max-w-[1400px] items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="relative min-h-[470px]">
+          <Polaroid image="/images/about.jpg" caption="a little piece of my journey" className="absolute left-0 top-8 w-[300px] rotate-[-5deg] sm:w-[380px]" />
+          <div className="absolute bottom-4 right-4 hidden rotate-[5deg] bg-[#a8b39b] p-6 text-[#2d211d] shadow-xl md:block">
+            <p className="font-serif text-2xl italic">UX/UI</p>
+            <p className="text-sm">Front-end · Storytelling · Research</p>
           </div>
-
-          <Stamp className="hidden md:flex">
-            Journey
-            <br />
-            in progress
-          </Stamp>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="relative rounded-[1.5rem] bg-[#e8d7c3] p-4 shadow-inner">
-            <div className="relative rounded-[1.2rem] bg-[#fffaf3] p-5 shadow-sm">
-              <Tape className="left-16 top-[-8px]" />
+        <div className="relative bg-[#fffaf3] p-7 shadow-2xl md:p-10">
+          <Tape className="right-16 top-[-18px] rotate-[5deg]" />
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">About me</p>
 
-              <div className="mb-5 h-[420px] rounded-xl bg-[url('public/images/about.jpg')] bg-cover bg-center" />
+          <h2 className="font-serif text-5xl leading-tight text-[#2d211d] md:text-6xl">
+            Hi, I’m Jasmin!
+          </h2>
 
-              <div className="flex flex-wrap gap-2">
-                {["UX/UI", "Front-end", "Storytelling", "Figma", "React"].map(
-                  (tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-[#f1bdc8]/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-[#3a2b28]"
-                    >
-                      {tag}
-                    </span>
-                  )
-                )}
-              </div>
-            </div>
-          </div>
+          <p className="mt-5 leading-relaxed text-[#4d3b35]">
+            I’m an ICT Media Design student with a passion for UX/UI design, front-end development and creative storytelling.
+          </p>
 
-          <div className="grid gap-5">
-            <div className="relative rounded-[1.5rem] bg-[#fffaf3] p-8 shadow-sm">
-              <Tape className="right-20 top-[-8px]" />
+          <p className="mt-4 leading-relaxed text-[#4d3b35]">
+            My portfolio is designed as a digital scrapbook because I wanted it to feel personal, visual and layered. It shows not only final products, but also my process, feedback moments, iterations and growth.
+          </p>
 
-              <p className="font-serif text-2xl leading-relaxed text-[#3a2b28]">
-                Hi, I’m Jasmin! 20 years old, born in Roermond and living in
-                Limburg.
-              </p>
-
-              <div className="mt-6 space-y-5 leading-relaxed text-[#5b4741]">
-                <p>
-                  I’m studying ICT Media Design at Fontys University of Applied
-                  Sciences in Eindhoven, where I’m discovering my passion for
-                  UX/UI design and front-end development.
-                </p>
-
-                <p>
-                  I love bringing ideas to life through clean design and
-                  thoughtful interaction.
-                </p>
-
-                <p>
-                  Whether it’s a playful concept, a sleek interface, or a tiny
-                  hover effect, I’m all about creating digital things that
-                  people enjoy using and looking at.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid gap-5 md:grid-cols-2">
-              <div className="rounded-[1.5rem] bg-[#3a2b28] p-7 text-[#fff8ef] shadow-sm">
-                <p className="mb-5 font-serif text-3xl">Background</p>
-
-                <div className="space-y-5 text-sm leading-relaxed text-white/80">
-                  <div>
-                    <p className="font-bold text-white">Havo Degree</p>
-                    <p>Senior general secondary education</p>
-                    <p className="text-white/55">Sep 2018 - 2023</p>
-                  </div>
-
-                  <div>
-                    <p className="font-bold text-white">
-                      Propedeuse Certificate - HBO ICT
-                    </p>
-                    <p>Fontys University of Applied Sciences - Eindhoven</p>
-                    <p className="text-white/55">Sep 2023 - May 2024</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-[1.5rem] bg-[#9ba78f] p-7 text-[#2d211d] shadow-sm">
-                <p className="mb-5 font-serif text-3xl">Expertise</p>
-
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    "UX/UI design",
-                    "Wireframes",
-                    "Prototyping",
-                    "HTML/CSS/JS",
-                    "React",
-                    "Node basics",
-                    "Component-based design",
-                    "Figma",
-                    "Adobe XD",
-                    "Canva",
-                    "Creative storytelling",
-                    "User research",
-                    "Agile/Scrum",
-                    "Swift",
-                  ].map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full bg-[#fff8ef]/55 px-3 py-2 text-xs font-semibold"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="mt-7 flex flex-wrap gap-2">
+            {["UX/UI", "React", "Tailwind", "Figma", "User testing", "Storytelling"].map((tag) => (
+              <span key={tag} className="bg-[#eadcc7] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em]">
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
       </div>
@@ -372,389 +430,62 @@ function About() {
   );
 }
 
-function ProjectLetterModal({ project, onClose }) {
-  if (!project) return null;
-
-  const handleBackdropClick = (event) => {
-    if (event.target === event.currentTarget) {
-      onClose();
-    }
-  };
-
-  const goToCase = () => {
-    onClose();
-
-    if (project.href) {
-      setTimeout(() => {
-        document.querySelector(project.href)?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }, 150);
-    }
-  };
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      onClick={handleBackdropClick}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[#1f1715]/70 p-4 backdrop-blur-sm"
-    >
-      <motion.div
-        initial={{ y: 80, rotate: -2, scale: 0.92, opacity: 0 }}
-        animate={{ y: 0, rotate: 0, scale: 1, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 130, damping: 18 }}
-        className="relative max-h-[88vh] w-full max-w-5xl overflow-y-auto rounded-[2rem] bg-[#fff8ef] p-6 text-[#3a2b28] shadow-[0_30px_90px_rgba(0,0,0,0.35)] md:p-10"
-      >
-        <Texture />
-        <Tape className="left-16 top-[-10px]" />
-        <Tape className="right-20 top-[-8px] rotate-[5deg]" />
-
-        <button
-          onClick={onClose}
-          className="absolute right-5 top-5 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-[#3a2b28] text-lg font-bold text-[#fff8ef] shadow-md"
-          aria-label="Close project letter"
-        >
-          ×
-        </button>
-
-        <div className="relative z-10 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <aside className="rounded-[1.5rem] bg-[#f7eadb] p-6 shadow-inner">
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#d08491]">
-              Case file {project.number}
-            </p>
-
-            <h3 className="font-serif text-5xl leading-none md:text-6xl">
-              {project.title}
-            </h3>
-
-            <p className="mt-4 w-fit rounded-full bg-[#f1bdc8]/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em]">
-              {project.category}
-            </p>
-
-            <div className="mt-8 rounded-2xl bg-[#fffaf3] p-5 shadow-sm">
-              <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-[#9a7b6a]">
-                My role
-              </p>
-              <p className="leading-relaxed text-[#5b4741]">{project.role}</p>
-            </div>
-
-            <div className="mt-5 rounded-2xl bg-[#fffaf3] p-5 shadow-sm">
-              <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#9a7b6a]">
-                Tools & skills
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="rounded-full bg-[#eadcc7] px-3 py-2 text-xs font-semibold"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </aside>
-
-          <section className="relative rounded-[1.5rem] bg-[#fffaf3] p-6 shadow-sm md:p-8">
-            <div className="mb-8 flex items-start justify-between gap-5 border-b border-[#e3cbbb] pb-6">
-              <div>
-                <p className="font-serif text-3xl italic text-[#d08491]">
-                  Dear visitor,
-                </p>
-                <p className="mt-2 max-w-2xl leading-relaxed text-[#5b4741]">
-                  Here is the story behind this project, written like a little
-                  letter from my creative archive.
-                </p>
-              </div>
-              <Stamp className="hidden md:flex">
-                Opened
-                <br />
-                case
-              </Stamp>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-2">
-              <div>
-                <h4 className="font-serif text-3xl">Overview</h4>
-                <p className="mt-3 leading-relaxed text-[#5b4741]">
-                  {project.text}
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-serif text-3xl">Why it matters</h4>
-                <p className="mt-3 leading-relaxed text-[#5b4741]">
-                  This project shows how I combine concept thinking, visual
-                  design and interaction to create something that feels clear,
-                  playful and meaningful for the user.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-serif text-3xl">Process</h4>
-                <p className="mt-3 leading-relaxed text-[#5b4741]">
-                  I moved from research and moodboards to wireframes,
-                  prototypes, visual design and testing. This helped me make
-                  choices based on the target audience instead of only my own
-                  taste.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-serif text-3xl">What I learned</h4>
-                <p className="mt-3 leading-relaxed text-[#5b4741]">
-                  I learned that strong design is not only about aesthetics. It
-                  is about creating a flow that people understand, enjoy and can
-                  use without friction.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-8 flex flex-col gap-3 rounded-2xl bg-[#e8d7c3]/70 p-5 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-sm leading-relaxed text-[#5b4741]">
-                Want to see the full detailed case? This can later become a
-                separate case page.
-              </p>
-
-              <button
-                onClick={goToCase}
-                className="flex w-fit items-center gap-2 rounded-full bg-[#3a2b28] px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] text-[#fff8ef] transition hover:gap-4"
-              >
-                Go to case <ArrowRight size={14} />
-              </button>
-            </div>
-          </section>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-}
-
-function ProjectCard({ project, onOpen }) {
-  return (
-    <motion.article
-      onClick={() => onOpen(project)}
-      whileHover={{ y: -8, rotate: -1 }}
-      transition={{ type: "spring", stiffness: 260, damping: 18 }}
-      className={`group relative min-h-[285px] cursor-pointer overflow-hidden rounded-2xl p-7 shadow-[0_18px_45px_rgba(58,43,40,0.14)] ${project.color}`}
-    >
-      <Texture />
-
-      <div className="absolute inset-x-0 bottom-0 h-[72%] bg-inherit" />
-      <div className="absolute inset-x-0 top-0 h-28 origin-top bg-black/5 [clip-path:polygon(0_0,50%_72%,100%_0,100%_100%,0_100%)]" />
-      <div className="absolute left-0 right-0 top-0 h-20 border-b border-black/10 bg-white/10" />
-      <div className="absolute right-5 top-5 h-9 w-9 rounded-full border border-black/25 bg-white/30" />
-      <div className="absolute right-8 top-12 h-16 w-px bg-black/20" />
-
-      <div className="relative z-10 flex h-full flex-col justify-between gap-10">
-        <div>
-          <p className="mb-3 font-serif text-xl opacity-80">{project.number}</p>
-
-          <h3 className="font-serif text-4xl leading-none">{project.title}</h3>
-
-          <p className="mt-5 max-w-lg text-sm leading-relaxed opacity-80">
-            {project.text}
-          </p>
-        </div>
-
-        <div className="flex items-center justify-between gap-4">
-          <button
-            type="button"
-            className="flex w-fit items-center gap-2 rounded-full bg-[#fff8ef] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-[#3a2b28] shadow-sm transition group-hover:gap-4"
-          >
-            Open letter <ArrowRight size={13} />
-          </button>
-
-          <p className="hidden text-xs uppercase tracking-[0.14em] opacity-60 sm:block">
-            Click envelope
-          </p>
-        </div>
-      </div>
-
-      <div className="absolute bottom-4 right-5 font-serif text-5xl opacity-10">
-        ✉
-      </div>m 
-    </motion.article>
-  );
-}
-
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
+  if (selectedProject) {
+    return <ProjectDetail project={selectedProject} onBack={() => setSelectedProject(null)} />;
+  }
+
   return (
-    <>
-      <section
-        id="projects"
-        className="relative overflow-hidden rounded-[2rem] bg-[#fff5ec] p-8 shadow-[0_15px_45px_rgba(58,43,40,0.1)] lg:p-12"
-      >
-        <Texture />
+    <section id="projects" className="relative z-30 -mt-20 overflow-visible px-6 py-24 md:px-10 lg:px-14">
+      <PaperLayer className="right-5 top-8 h-[92%] w-[95%] rotate-[-1deg] bg-[#f5eadc]" />
+      <PaperLayer className="left-16 top-24 hidden h-40 w-72 rotate-[4deg] bg-[#e8a7b2]/35 md:block" />
 
-        <div className="relative z-10">
-          <div className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end">
-            <div>
-              <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#d08491]">
-                Work
-              </p>
-              <h2 className="font-serif text-5xl text-[#2d211d] md:text-7xl">
-                My Projects
-              </h2>
-              <p className="mt-3 max-w-2xl leading-relaxed text-[#5b4741]">
-                A selection of projects where creativity, interaction and
-                digital design come together. Click an envelope to open the
-                project letter.
-              </p>.
-            </div>
-
-            <div className="flex flex-wrap gap-2 text-xs font-bold uppercase tracking-[0.12em]">
-              {["All", "Web Design", "UI/UX", "Branding", "Interactive"].map(
-                (filter, index) => (
-                  <button
-                    key={filter}
-                    className={`rounded-full px-4 py-2 ${
-                      index === 0
-                        ? "bg-[#3a2b28] text-[#fff8ef]"
-                        : "bg-[#eadcc7] text-[#3a2b28]"
-                    }`}
-                  >
-                    {filter}
-                  </button>
-                )
-              )}
-            </div>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-2">
-            {projects.map((project) => (
-              <ProjectCard
-                key={project.number}
-                project={project}
-                onOpen={setSelectedProject}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <ProjectLetterModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
-    </>
-  );
-}
-
-function CaseStudy() {
-  return (
-    <section
-      id="mijn-sprookje"
-      className="relative scroll-mt-6 overflow-hidden rounded-[2rem] bg-[#f7eadb] p-6 shadow-[0_15px_45px_rgba(58,43,40,0.1)] lg:p-10"
-    >
-      <Texture />
-
-      <div className="relative z-10">
-        <div className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+      <div className="relative z-10 mx-auto max-w-[1400px]">
+        <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#d08491]">
-              Featured case
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">Selected work</p>
+            <h2 className="font-serif text-5xl leading-tight text-[#2d211d] md:text-7xl">Project Pages</h2>
+            <p className="mt-4 max-w-2xl leading-relaxed text-[#4d3b35]">
+              Each project opens into a detailed case study with problem, goal, process, result and reflection.
             </p>
-
-            <h2 className="font-serif text-5xl leading-tight text-[#3a2b28] md:text-7xl">
-              Gen-AI Storytelling
-              <br />
-              for Efteling
-            </h2>
           </div>
 
           <Stamp className="hidden md:flex">
-            Case
+            Open
             <br />
-            01
+            archive
           </Stamp>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[230px_1fr]">
-          <div className="hidden rounded-2xl bg-[#6d4e3e] p-4 text-[#fff8ef] lg:block">
-            {["Overview", "Challenge", "Research", "Design", "Testing", "Result"].map(
-              (tab, index) => (
-                <div
-                  key={tab}
-                  className={`mb-3 rounded-xl px-4 py-3 text-xs uppercase tracking-[0.12em] ${
-                    index === 0
-                      ? "bg-[#2d211d]"
-                      : "bg-[#fff8ef]/75 text-[#3a2b28]"
-                  }`}
-                >
-                  {tab}
-                </div>
-              )
-            )}
-          </div>
+        <div className="grid gap-7 sm:grid-cols-2 xl:grid-cols-4">
+          {projects.map((project, index) => (
+            <motion.article
+              key={project.number}
+              onClick={() => setSelectedProject(project)}
+              whileHover={{ y: -8, rotate: index % 2 === 0 ? -1 : 1 }}
+              className={`relative cursor-pointer bg-[#fffaf3] p-4 pb-7 shadow-2xl ${index % 2 === 0 ? "rotate-[-1deg]" : "rotate-[1deg]"}`}
+            >
+              <Tape className="left-12 top-[-17px] rotate-[-7deg]" />
 
-          <div className="relative rounded-[1.5rem] bg-[#fffaf3] p-8 shadow-sm">
-            <Tape className="right-24 top-[-10px]" />
+              <div className="h-48 bg-[#eadcc7] bg-cover bg-center shadow-inner" style={{ backgroundImage: `url(${project.image})` }} />
 
-            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-              <div>
-                <p className="font-serif text-xl italic text-[#d08491]">Work</p>
-
-                <h3 className="mt-3 font-serif text-5xl leading-none text-[#3a2b28]">
-                  Mijn
-                  <br />
-                  Sprookje
-                </h3>
-
-                <p className="mt-5 w-fit rounded-full bg-[#f1bdc8]/60 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#3a2b28]">
-                  Gen-AI · UX/UI · Web app
-                </p>
-
-                <div className="mt-8 space-y-5 leading-relaxed text-[#5b4741]">
-                  <p>
-                    I worked on a playful and interactive web app for children
-                    aged 4 to 6, where they can dream up and personalize their
-                    own fairy tales.
-                  </p>
-
-                  <p>
-                    Developed in collaboration with Mach8 and LiveWall for
-                    Efteling, I used ReplicateAPI models to spark imagination
-                    and creativity.
-                  </p>
-
-                  <p>
-                    The design was created from a child’s perspective and tested
-                    with young users to make sure it fits their world.
-                  </p>
-                </div>
+              <div className={`mt-4 inline-flex px-3 py-1 text-xs font-bold ${project.color}`}>
+                {project.number}
               </div>
 
-              <div className="relative pb-10">
-                <div className="rounded-xl bg-white p-3 shadow-xl">
-                  <div className="flex h-[390px] items-center justify-center rounded-lg bg-[#e7b4bd] p-8 text-center">
-                    <div>
-                      <p className="font-serif text-5xl leading-tight text-[#3a2b28]">
-                        Project visual
-                        <br />
-                        is coming soon 
-                      </p>
-                      <p className="mt-4 text-[#5b4741]">
-                        Replace this block with screenshots from Mijn Sprookje.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <h3 className="mt-3 font-serif text-3xl leading-none text-[#2d211d]">{project.title}</h3>
 
-                <div className="absolute bottom-0 right-6 rotate-[-3deg] rounded-xl bg-[#a8b39b] p-5 text-sm text-[#2d211d] shadow-lg">
-                  <p className="mb-2 font-serif text-2xl">Highlights</p>
-                  <p>✓ Designed for children aged 4 to 6</p>
-                  <p>✓ Tested with young users</p>
-                  <p>✓ AI-powered storytelling</p>
-                  <p>✓ Simple and intuitive interface</p>
-                </div>
-              </div>
-            </div>
-          </div>
+              <p className="mt-2 text-xs font-bold uppercase tracking-[0.12em] text-[#a06055]">{project.category}</p>
+
+              <p className="mt-4 text-sm leading-relaxed text-[#4d3b35]">{project.text}</p>
+
+              <button className="mt-6 inline-flex items-center gap-2 border-b border-[#3a2b28] pb-1 text-sm font-bold">
+                Read case <ArrowRight size={14} />
+              </button>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>
@@ -763,44 +494,31 @@ function CaseStudy() {
 
 function Process() {
   return (
-    <section
-      id="process"
-      className="relative overflow-hidden rounded-[2rem] bg-[#fff5ec] p-8 shadow-[0_15px_45px_rgba(58,43,40,0.1)] lg:p-12"
-    >
-      <Texture />
+    <section id="process" className="relative z-20 -mt-16 overflow-visible px-6 py-24 text-[#fff8ef] md:px-10 lg:px-14">
+      <PaperLayer className="left-4 top-10 h-[90%] w-[96%] rotate-[1deg] bg-[#6f7a61]" />
+      <Decor src="/decor/flower.png" className="right-10 top-10 hidden w-20 opacity-80 md:block" />
 
-      <div className="relative z-10">
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#d08491]">
-          Behind the scenes
-        </p>
-        <h2 className="font-serif text-5xl text-[#2d211d] md:text-7xl">
-          My Process
-        </h2>
+      <div className="relative z-10 mx-auto grid max-w-[1400px] gap-8 lg:grid-cols-[280px_1fr]">
+        <div>
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#f1d1c7]">Behind the scenes</p>
+          <h2 className="font-serif text-5xl leading-tight md:text-6xl">My Process</h2>
+          <p className="mt-5 text-sm leading-relaxed text-white/80">
+            I build from research to design, from feedback to iteration, and from prototype to final product.
+          </p>
+        </div>
 
-        <p className="mt-3 max-w-2xl leading-relaxed text-[#5b4741]">
-          How I turn ideas into impactful digital experiences.
-        </p>
-
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {processSteps.map((step) => {
+        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          {steps.map((step) => {
             const Icon = step.icon;
 
             return (
-              <motion.div
-                whileHover={{ y: -6 }}
-                key={step.number}
-                className={`relative rounded-xl p-5 shadow-lg ${step.color}`}
-              >
-                <div className="absolute -top-3 left-1/2 h-6 w-6 -translate-x-1/2 rounded-full bg-[#d9c4a6] shadow" />
-
-                <p className="font-serif text-xl opacity-70">{step.number}</p>
-
-                <Icon className="my-4" size={30} />
-
-                <h3 className="font-serif text-2xl">{step.title}</h3>
-
-                <p className="mt-3 text-sm opacity-75">{step.text}</p>
-              </motion.div>
+              <div key={step.number} className="relative bg-[#fffaf3] p-6 text-[#2d211d] shadow-2xl">
+                <Tape className="left-8 top-[-16px] w-24" />
+                <p className="font-serif text-3xl text-[#b5796d]">{step.number}</p>
+                <Icon className="mt-5" size={34} />
+                <h3 className="mt-5 font-serif text-3xl">{step.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#4d3b35]">{step.text}</p>
+              </div>
             );
           })}
         </div>
@@ -811,140 +529,53 @@ function Process() {
 
 function Contact() {
   return (
-    <section
-      id="contact"
-      className="relative grid overflow-hidden rounded-[2rem] bg-[#67725f] p-8 text-[#fff8ef] shadow-[0_15px_45px_rgba(58,43,40,0.1)] lg:grid-cols-[.85fr_1.15fr] lg:p-12"
-    >
-      <Texture />
+    <section id="contact" className="relative z-10 -mt-16 overflow-visible px-6 py-24 md:px-10 lg:px-14">
+      <PaperLayer className="right-6 top-8 h-[90%] w-[94%] rotate-[-1deg] bg-[#f5eadc]" />
 
-      <div className="relative z-10 flex flex-col justify-center">
-        <h2 className="font-serif text-5xl leading-tight md:text-7xl">
-          Let’s create
-          <br />
-          something beautiful
-          <br />
-          together.
-        </h2>
+      <div className="relative z-10 mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">Contact</p>
+          <h2 className="font-serif text-5xl leading-tight text-[#2d211d] md:text-7xl">
+            Let’s create
+            <br />
+            something
+            <br />
+            beautiful.
+          </h2>
 
-        <p className="mt-5 max-w-sm text-white/80">
-          I’m always open to internship opportunities, collaborations and
-          creative conversations.
-        </p>
-
-        <div className="mt-9 space-y-4 text-sm">
-          <p className="flex items-center gap-3">
-            <Mail size={18} /> jhachmane@gmail.com
-          </p>
-          <p className="flex items-center gap-3">
-            <MapPin size={18} /> Netherlands
-          </p>
-          <p className="flex items-center gap-3">
-            <span className="text-lg">in</span> https://www.linkedin.com/in/jasmin-h-2b0655338/
-          </p>
-          <p className="flex items-center gap-3">
-            <span className="text-lg">⌘</span> https://github.com/JasminHachmane
-          </p>
-          <p className="flex items-center gap-3">
-            <Download size={18} /> Download CV
+          <p className="mt-5 max-w-md leading-relaxed text-[#4d3b35]">
+            I’m always open to feedback, opportunities and creative conversations.
           </p>
         </div>
-      </div>
 
-      <div className="relative z-10 mt-10 lg:mt-0">
-        <div className="relative mx-auto max-w-md rotate-2 rounded-2xl bg-[#fff8ef] p-8 text-[#3a2b28] shadow-2xl">
-          <Tape className="right-12 top-[-10px]" />
+        <div className="relative bg-[#fffaf3] p-7 shadow-2xl md:p-10">
+          <Tape className="left-14 top-[-18px]" />
 
-          <div className="mb-6 flex items-center justify-between">
-            <p className="font-serif text-3xl italic">Postcard</p>
-            <div className="rounded-lg border border-[#d08491] p-3 text-[#d08491]">
-              ♡
-            </div>
+          <div className="space-y-5 text-[#3a2b28]">
+            <p className="flex items-center gap-3">
+              <Mail size={18} /> jhachmane@gmail.com
+            </p>
+
+            <p className="flex items-center gap-3">
+              <MapPin size={18} /> The Netherlands
+            </p>
+
+            <a href="https://www.linkedin.com/in/jasmin-h-2b0655338/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+              <span className="font-bold">in</span> LinkedIn
+            </a>
+
+            <a href="https://github.com/JasminHachmane" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+              <span className="font-bold">⌘</span> GitHub
+            </a>
+
+            <a href="/documents/Jasmin-Hachmane-CV.pdf" download className="flex items-center gap-3">
+              <Download size={18} /> Download CV
+            </a>
           </div>
 
-          <p className="mb-6 font-serif text-xl italic">
-            I’d love to hear from you!
+          <p className="mt-10 rotate-[-4deg] text-right font-serif text-2xl italic text-[#4d3b35]">
+            Thanks for stopping by! ♡
           </p>
-
-          <form className="space-y-4">
-            <input
-              className="w-full border-b border-[#c7a996] bg-transparent py-3 outline-none"
-              placeholder="Your name"
-            />
-            <input
-              className="w-full border-b border-[#c7a996] bg-transparent py-3 outline-none"
-              placeholder="Your email"
-            />
-            <textarea
-              className="h-28 w-full resize-none border-b border-[#c7a996] bg-transparent py-3 outline-none"
-              placeholder="Your message"
-            />
-            <button
-              type="button"
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#d99aa0] px-5 py-3 text-sm font-bold uppercase tracking-[0.12em] text-white"
-            >
-              Send message <ArrowRight size={15} />
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function InteractionStrip({ darkMode, setDarkMode }) {
-  return (
-    <section className="relative overflow-hidden rounded-[2rem] bg-[#fff5ec] p-6 shadow-[0_15px_45px_rgba(58,43,40,0.1)] lg:p-8">
-      <Texture />
-
-      <div className="relative z-10 grid gap-6 lg:grid-cols-[1fr_1.2fr_1.2fr_1.1fr]">
-        <div>
-          <h2 className="font-serif text-3xl text-[#2d211d]">
-            Little details, big experience
-          </h2>
-          <p className="mt-2 text-sm text-[#5b4741]">
-            Crafted interactions that make exploring feel personal.
-          </p>
-        </div>
-
-        <div className="flex items-center justify-center gap-4 border-l border-[#decabb] px-6">
-          <span className="text-xs uppercase tracking-[0.12em] text-[#5b4741]">
-            Hover effect
-          </span>
-          <motion.div
-            whileHover={{ rotate: 4, y: -4 }}
-            className="h-16 w-28 rounded-xl bg-[#e8a7b2] shadow-md"
-          />
-        </div>
-
-        <div className="flex items-center justify-center gap-4 border-l border-[#decabb] px-6">
-          <span className="text-xs uppercase tracking-[0.12em] text-[#5b4741]">
-            Envelope opening
-          </span>
-          <div className="h-16 w-28 rounded-xl bg-[#e8a7b2] shadow-md before:block before:h-8 before:rounded-t-xl before:border-b before:border-black/10 before:bg-white/20" />
-        </div>
-
-        <div className="flex items-center justify-center gap-3 border-l border-[#decabb] px-6">
-          <button
-            onClick={() => setDarkMode(false)}
-            className={`flex items-center gap-2 rounded-xl px-5 py-3 ${
-              !darkMode
-                ? "bg-white text-[#d08491]"
-                : "bg-[#eadcc7] text-[#3a2b28]"
-            }`}
-          >
-            Light <Sun size={16} />
-          </button>
-
-          <button
-            onClick={() => setDarkMode(true)}
-            className={`flex items-center gap-2 rounded-xl px-5 py-3 ${
-              darkMode
-                ? "bg-[#3a2b28] text-white"
-                : "bg-[#eadcc7] text-[#3a2b28]"
-            }`}
-          >
-            Dark <Moon size={16} />
-          </button>
         </div>
       </div>
     </section>
@@ -952,50 +583,20 @@ function InteractionStrip({ darkMode, setDarkMode }) {
 }
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
   return (
-    <main
-      className={`relative overflow-hidden ${
-        darkMode ? "bg-[#1f1715]" : "bg-[#f4ddd9]"
-      } min-h-screen p-3 font-sans text-[#3a2b28] transition-colors duration-500 sm:p-5`}
-    >
-      <div className="pointer-events-none fixed -left-24 top-20 h-72 w-72 rounded-full bg-[#f1bdc8]/25 blur-3xl" />
-      <div className="pointer-events-none fixed -right-24 bottom-24 h-96 w-96 rounded-full bg-[#8e9679]/20 blur-3xl" />
-      <div className="pointer-events-none fixed inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_1px_1px,#3a2b28_1px,transparent_0)] [background-size:22px_22px]" />
+    <main className="relative min-h-screen overflow-hidden bg-[#1f1715] font-sans text-[#3a2b28]">
+      <div className="relative mx-auto max-w-[1600px] bg-[#f4eadf]">
+        <Texture />
 
-      <div className="relative z-10 mx-auto grid max-w-[1500px] gap-8">
-        <ScrollReveal>
-          <Hero />
-        </ScrollReveal>
+        <Reveal><Hero /></Reveal>
+        <Reveal><About /></Reveal>
+        <Reveal><Projects /></Reveal>
+        <Reveal><Process /></Reveal>
+        <Reveal><Contact /></Reveal>
 
-        <ScrollReveal delay={0.05} rotate={-0.4}>
-          <About />
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.08} rotate={0.4}>
-          <Projects />
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.08} rotate={-0.35}>
-          <CaseStudy />
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.08} rotate={0.35}>
-          <Process />
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.08} rotate={-0.25}>
-          <Contact />
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.08}>
-          <InteractionStrip darkMode={darkMode} setDarkMode={setDarkMode} />
-        </ScrollReveal>
-
-        <footer className="flex flex-col items-center justify-between gap-4 py-8 text-sm text-[#5b4741] md:flex-row">
-          <p className="font-serif text-2xl italic">Jasmin.</p>
-          <p>A digital scrapbook of design, storytelling and code.</p>
+        <footer className="relative z-20 bg-[#2d211d] px-8 py-5 text-xs text-[#fff8ef]/70 md:flex md:justify-between">
+          <p>© 2026 Jasmin Hachmane · Showcase Portfolio</p>
+          <p>Made with React, Tailwind and lots of scrapbook layers ♡</p>
         </footer>
       </div>
     </main>
