@@ -121,7 +121,7 @@ const steps = [
 function Texture() {
   return (
     <>
-      <div className="pointer-events-none absolute inset-0 opacity-[0.18] mix-blend-multiply bg-[url('/textures/paper.jpg')] bg-cover" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.18] mix-blend-multiply bg-[url('/decor/paper.jpg')] bg-cover" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_1px_1px,#3a2b28_1px,transparent_0)] [background-size:19px_19px]" />
     </>
   );
@@ -138,7 +138,20 @@ function Tape({ className = "" }) {
   );
 }
 
-function Decor({ src, className = "" }) {
+function Decor({ src, className = "", float = false }) {
+  if (float) {
+    return (
+      <motion.img
+        src={src}
+        alt=""
+        onError={(e) => (e.currentTarget.style.display = "none")}
+        animate={{ y: [0, -10, 0], rotate: [0, 3, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        className={`pointer-events-none absolute z-20 ${className}`}
+      />
+    );
+  }
+
   return (
     <img
       src={src}
@@ -159,33 +172,54 @@ function PaperLayer({ className = "" }) {
 
 function Stamp({ children, className = "" }) {
   return (
-    <div
+    <motion.div
+      whileHover={{ rotate: -4, scale: 1.04 }}
+      transition={{ type: "spring", stiffness: 200, damping: 18 }}
       className={`inline-flex rotate-[-8deg] items-center justify-center border border-[#b5796d] bg-[#fff8ef]/75 px-5 py-4 text-center font-serif text-[10px] uppercase tracking-[0.18em] text-[#b5796d] shadow-sm ${className}`}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
 
 function Note({ children, className = "" }) {
   return (
-    <div className={`relative rotate-[-3deg] bg-[#fff2a9] p-5 shadow-xl ${className}`}>
+    <motion.div
+      whileHover={{ y: -6, rotate: -1, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 220, damping: 18 }}
+      className={`relative rotate-[-3deg] bg-[#fff2a9] p-5 shadow-xl ${className}`}
+    >
       <Tape className="left-8 top-[-18px] rotate-[-5deg]" />
-      <p className="font-serif text-lg italic leading-relaxed text-[#3a2b28]">{children}</p>
-    </div>
+
+      <p className="font-serif text-lg italic leading-relaxed text-[#3a2b28]">
+        {children}
+      </p>
+
+      <span className="absolute bottom-3 right-4 text-2xl text-[#c47777]/70">
+        ♡
+      </span>
+    </motion.div>
   );
 }
 
 function Polaroid({ image, caption, className = "" }) {
   return (
-    <div className={`relative bg-[#fffaf3] p-3 pb-10 shadow-2xl ${className}`}>
+    <motion.div
+      whileHover={{ y: -8, rotate: 0, scale: 1.03 }}
+      transition={{ type: "spring", stiffness: 220, damping: 18 }}
+      className={`relative bg-[#fffaf3] p-3 pb-10 shadow-2xl ${className}`}
+    >
       <Tape className="left-12 top-[-16px] rotate-[-6deg]" />
+
       <div
         className="h-72 bg-[#eadcc7] bg-cover bg-center shadow-inner sm:h-80"
         style={{ backgroundImage: `url(${image})` }}
       />
-      <p className="mt-3 text-center font-serif text-lg italic text-[#3a2b28]">{caption}</p>
-    </div>
+
+      <p className="mt-3 text-center font-serif text-lg italic text-[#3a2b28]">
+        {caption}
+      </p>
+    </motion.div>
   );
 }
 
@@ -206,7 +240,7 @@ function ProjectDetail({ project, onBack }) {
   return (
     <section className="relative z-40 -mt-20 overflow-visible px-6 py-24 md:px-10 lg:px-14">
       <PaperLayer className="left-4 top-12 h-[92%] w-[94%] rotate-[-1deg] bg-[#f7eadb]" />
-      <Decor src="/decor/sparkle.png" className="right-12 top-12 hidden w-16 rotate-12 md:block" />
+      <Decor src="/decor/sparkle.png" float className="right-12 top-12 hidden w-16 rotate-12 md:block" />
 
       <div className="relative z-10 mx-auto max-w-[1400px]">
         <button
@@ -301,13 +335,12 @@ function Hero() {
       <PaperLayer className="right-8 top-24 hidden h-72 w-56 rotate-[7deg] bg-[#e8a7b2]/50 md:block" />
       <PaperLayer className="left-10 bottom-16 hidden h-56 w-80 rotate-[-5deg] bg-[#d8c49f]/60 lg:block" />
 
-      <Decor src="/decor/flower.png" className="right-10 top-24 hidden w-20 rotate-12 md:block" />
-      <Decor src="/decor/sparkle.png" className="left-1/2 top-28 hidden w-14 md:block" />
-      <Decor src="/decor/heart.png" className="bottom-24 left-16 hidden w-14 -rotate-12 lg:block" />
+      <Decor src="/decor/flower.png" float className="right-10 top-24 hidden w-20 rotate-12 md:block" />
+      <Decor src="/decor/sparkle.png" float className="left-1/2 top-28 hidden w-14 md:block" />
+      <Decor src="/decor/heart.png" float className="bottom-24 left-16 hidden w-14 -rotate-12 lg:block" />
 
       <header className="relative z-40 mx-auto flex max-w-[1500px] items-center justify-between gap-4">
         <div className="relative rotate-[-2deg] bg-[#fff8ef] px-7 py-4 shadow-xl">
-          <Tape className="left-3 top-[-17px] w-24 rotate-[-8deg]" />
           <p className="font-serif text-3xl italic text-[#2d211d]">Jasmin.</p>
         </div>
 
@@ -326,13 +359,34 @@ function Hero() {
 
       <div className="relative z-10 mx-auto mt-16 grid max-w-[1500px] items-center gap-12 lg:grid-cols-[1fr_0.95fr]">
         <div>
-          <p className="font-serif text-5xl italic text-[#c47777] md:text-6xl">The</p>
+          <motion.p
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mb-4 w-fit bg-[#fff8ef] px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[#a06055] shadow-md"
+          >
+            Vol. III · 2025–2026 Collection
+          </motion.p>
 
-          <h1 className="mt-1 font-serif text-6xl leading-[0.88] tracking-[-0.05em] text-[#2d211d] sm:text-7xl md:text-8xl lg:text-9xl">
+          <motion.p
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="font-serif text-5xl italic text-[#c47777] md:text-6xl"
+          >
+            The
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: 0.15 }}
+            className="mt-1 font-serif text-6xl leading-[0.88] tracking-[-0.05em] text-[#2d211d] sm:text-7xl md:text-8xl lg:text-9xl"
+          >
             Jasmin
             <br />
             Archives
-          </h1>
+          </motion.h1>
 
           <p className="mt-6 max-w-md text-xs font-bold uppercase tracking-[0.22em] text-[#a06055]">
             ICT Media Design · Showcase Portfolio
@@ -343,13 +397,21 @@ function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#projects" className="inline-flex items-center gap-3 bg-[#241916] px-6 py-4 text-sm font-bold text-[#fff8ef] shadow-xl transition hover:gap-5">
+            <motion.a
+              whileHover={{ y: -3, scale: 1.02 }}
+              href="#projects"
+              className="inline-flex items-center gap-3 bg-[#241916] px-6 py-4 text-sm font-bold text-[#fff8ef] shadow-xl transition hover:gap-5"
+            >
               Explore my work <ArrowRight size={17} />
-            </a>
+            </motion.a>
 
-            <a href="#process" className="inline-flex items-center gap-3 bg-[#fff8ef] px-6 py-4 text-sm font-bold text-[#3a2b28] shadow-xl transition hover:gap-5">
+            <motion.a
+              whileHover={{ y: -3, scale: 1.02 }}
+              href="#process"
+              className="inline-flex items-center gap-3 bg-[#fff8ef] px-6 py-4 text-sm font-bold text-[#3a2b28] shadow-xl transition hover:gap-5"
+            >
               View process <ArrowRight size={17} />
-            </a>
+            </motion.a>
           </div>
         </div>
 
@@ -360,6 +422,7 @@ function Hero() {
           <motion.div
             initial={{ rotate: 5, opacity: 0, y: 30 }}
             animate={{ rotate: 5, opacity: 1, y: 0 }}
+            whileHover={{ y: -8, rotate: 2, scale: 1.02 }}
             transition={{ duration: 0.8 }}
             className="absolute right-3 top-8 w-[285px] bg-[#fffaf3] p-4 pb-12 shadow-2xl sm:w-[360px]"
           >
@@ -368,9 +431,8 @@ function Hero() {
             <p className="mt-4 text-center font-serif text-xl italic text-[#3a2b28]">Designing with feeling ♡</p>
           </motion.div>
 
-          <Note className="absolute bottom-8 left-0 max-w-[230px] sm:left-10">
-            Chris told me to think in layers, not blocks.
-          </Note>
+          
+
 
           <Stamp className="absolute bottom-28 right-1 hidden md:flex">
             Creative
@@ -390,15 +452,13 @@ function About() {
     <section id="about" className="relative z-20 -mt-28 overflow-visible px-6 py-24 md:px-10 lg:px-14">
       <PaperLayer className="left-6 top-10 h-[90%] w-[94%] rotate-[1deg] bg-[#f7eadb]" />
       <PaperLayer className="right-20 bottom-10 hidden h-48 w-72 rotate-[-4deg] bg-[#a8b39b]/35 lg:block" />
-      <Decor src="/decor/sparkle.png" className="right-12 top-12 hidden w-16 rotate-12 md:block" />
+      <Decor src="/decor/sparkle.png" float className="right-12 top-12 hidden w-16 rotate-12 md:block" />
 
       <div className="relative z-10 mx-auto grid max-w-[1400px] items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="relative min-h-[470px]">
+        <div className="relative min-h-[520px]">
           <Polaroid image="/images/about.jpg" caption="a little piece of my journey" className="absolute left-0 top-8 w-[300px] rotate-[-5deg] sm:w-[380px]" />
-          <div className="absolute bottom-4 right-4 hidden rotate-[5deg] bg-[#a8b39b] p-6 text-[#2d211d] shadow-xl md:block">
-            <p className="font-serif text-2xl italic">UX/UI</p>
-            <p className="text-sm">Front-end · Storytelling · Research</p>
-          </div>
+
+        
         </div>
 
         <div className="relative bg-[#fffaf3] p-7 shadow-2xl md:p-10">
@@ -424,6 +484,10 @@ function About() {
               </span>
             ))}
           </div>
+
+          <Note className="mt-8 max-w-md rotate-[2deg]">
+            Keep learning, stay curious and never stop creating.
+          </Note>
         </div>
       </div>
     </section>
@@ -464,7 +528,8 @@ function Projects() {
             <motion.article
               key={project.number}
               onClick={() => setSelectedProject(project)}
-              whileHover={{ y: -8, rotate: index % 2 === 0 ? -1 : 1 }}
+              whileHover={{ y: -8, rotate: 0, scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 220, damping: 18 }}
               className={`relative cursor-pointer bg-[#fffaf3] p-4 pb-7 shadow-2xl ${index % 2 === 0 ? "rotate-[-1deg]" : "rotate-[1deg]"}`}
             >
               <Tape className="left-12 top-[-17px] rotate-[-7deg]" />
@@ -496,7 +561,7 @@ function Process() {
   return (
     <section id="process" className="relative z-20 -mt-16 overflow-visible px-6 py-24 text-[#fff8ef] md:px-10 lg:px-14">
       <PaperLayer className="left-4 top-10 h-[90%] w-[96%] rotate-[1deg] bg-[#6f7a61]" />
-      <Decor src="/decor/flower.png" className="right-10 top-10 hidden w-20 opacity-80 md:block" />
+      <Decor src="/decor/flower.png" float className="right-10 top-10 hidden w-20 opacity-80 md:block" />
 
       <div className="relative z-10 mx-auto grid max-w-[1400px] gap-8 lg:grid-cols-[280px_1fr]">
         <div>
@@ -512,13 +577,18 @@ function Process() {
             const Icon = step.icon;
 
             return (
-              <div key={step.number} className="relative bg-[#fffaf3] p-6 text-[#2d211d] shadow-2xl">
+              <motion.div
+                key={step.number}
+                whileHover={{ y: -8, rotate: 0, scale: 1.03 }}
+                transition={{ type: "spring", stiffness: 220, damping: 18 }}
+                className="relative bg-[#fffaf3] p-6 text-[#2d211d] shadow-2xl"
+              >
                 <Tape className="left-8 top-[-16px] w-24" />
                 <p className="font-serif text-3xl text-[#b5796d]">{step.number}</p>
                 <Icon className="mt-5" size={34} />
                 <h3 className="mt-5 font-serif text-3xl">{step.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#4d3b35]">{step.text}</p>
-              </div>
+              </motion.div>
             );
           })}
         </div>
