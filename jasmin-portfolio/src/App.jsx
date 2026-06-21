@@ -22,11 +22,11 @@ const projects = [
     title: "Mijn Sprookje",
     category: "Gen-AI · UX/UI · Web app",
     text: "A playful AI storytelling concept for children, created through research, testing and visual design.",
-    image: "/images/project-1.jpg",
+    image: "images/project01.png",
     color: "bg-[#e8a7b2]",
     details: {
       client: "Efteling · Mach8 · LiveWall",
-      role: "UX/UI design · Research · User testing · Concepting",
+      role: "UX/UI design · Research · User testing · Development",
       tools: ["Figma", "User testing", "AI concepting", "Storytelling", "UX research"],
       problem:
         "Children are reading less, while Efteling wanted to explore how interactive storytelling and AI could make fairy tales more playful, visual and engaging.",
@@ -49,7 +49,7 @@ const projects = [
     title: "Aurora Studio",
     category: "Branding · Web design",
     text: "A soft, elegant brand identity translated into a visual system and website design.",
-    image: "/images/project-2.jpg",
+    image: "/images/project-aurora.png",
     color: "bg-[#a8b39b]",
     details: {
       client: "Aurora Studio",
@@ -72,7 +72,7 @@ const projects = [
     title: "Dezcartes",
     category: "UX research · Prototype",
     text: "A card game platform developed through research, user testing, iterations and technical choices.",
-    image: "/images/project-3.jpg",
+    image: "/images/project-dezcartes.png",
     color: "bg-[#eadcc7]",
     details: {
       client: "Dezcartes project",
@@ -221,9 +221,9 @@ function Note({ children, className = "" }) {
     <motion.div
       whileHover={{ y: -6, rotate: -1, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 220, damping: 18 }}
-      className={`relative rotate-[-3deg] bg-[#fff2a9] p-5 shadow-xl ${className}`}
+      className={`relative rotate-[-3deg] bg-[#A1AF95] p-5 shadow-xl ${className}`}
     >
-      <Tape className="left-8 top-[-18px] rotate-[-5deg]" />
+      
 
       <p className="font-serif text-lg italic leading-relaxed text-[#3a2b28]">
         {children}
@@ -358,7 +358,7 @@ function FeaturedCasePreview() {
   return (
     <section className="relative z-30 -mt-20 overflow-visible px-6 py-28 md:px-10 lg:px-14">
       <PaperLayer className="right-5 top-10 h-[90%] w-[95%] rotate-[-1deg] bg-[#f5eadc]" />
-      <Decor src="/decor/flower.png" float className="right-12 top-16 hidden w-20 md:block" />
+      <Decor src="/decor/pressed-flower.png" float className="right-12 top-13 hidden w-40 md:block" />
 
       <div className="relative z-10 mx-auto grid max-w-[1400px] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
@@ -371,19 +371,19 @@ function FeaturedCasePreview() {
           </h2>
 
           <p className="mt-5 max-w-xl leading-relaxed text-[#4d3b35]">
-            A Gen-AI storytelling concept for children aged 4 to 6. This project
-            combines user research, playful UX/UI design, visual storytelling and
-            testing with young users.
+            A Gen-AI storytelling concept for children, developed in collaboration 
+            with Efteling, Mach8 and LiveWall, combining user research, design and technology
+            to create meaningful digital experiences for young audiences.
+
           </p>
 
           <Note className="mt-8 max-w-md">
-            This was the first time I designed for children aged 4–6, so every
-            choice had to be simple, visual and playful.
+            Designed and validated an engaging AI-powered storytelling experience for children aged 4–6.
           </Note>
         </div>
 
         <Polaroid
-          image="/images/project-1.jpg"
+          image="/images/project-mijnsprookje2.png"
           caption="featured project · Mijn Sprookje"
           className="rotate-[3deg]"
         />
@@ -820,7 +820,7 @@ function Hero() {
               <div className="h-[295px] bg-[#eadcc7] bg-[url('/images/me.jpg')] bg-cover bg-center shadow-inner sm:h-[330px]" />
 
               <p className="mt-4 text-center font-serif text-xl italic leading-tight text-[#3a2b28]">
-                Soft visuals.
+                Passion in Frond-end
                 <br />
                 Strong ideas.
               </p>
@@ -917,7 +917,7 @@ function Hero() {
               </p>
             </motion.div>
 
-            <div className="absolute left-12 bottom-10 z-30 hidden bg-[#efc8d1] p-5 shadow-xl lg:block">
+            <div className="absolute left-12 bottom-2 z-30 hidden bg-[#efc8d1] p-5 shadow-xl lg:block">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#2d211d]">
                 Archive Log
               </p>
@@ -980,15 +980,19 @@ function About() {
           </h2>
 
           <p className="mt-5 leading-relaxed text-[#4d3b35]">
-            I’m an ICT Media Design student with a passion for UX/UI design, front-end development and creative storytelling.
+             I'm an ICT Media Design student with a passion for UX/UI design, front-end development and creating meaningful digital experiences.
           </p>
 
           <p className="mt-4 leading-relaxed text-[#4d3b35]">
-            My portfolio is designed as a digital scrapbook because I wanted it to feel personal, visual and layered. It shows not only final products, but also my process, feedback moments, iterations and growth.
+            This portfolio is designed as a digital scrapbook to reflect both my personality and my way of working. 
+          </p>
+
+          <p className="mt-4 leading-relaxed text-[#4d3b35]">
+            I enjoy turning ideas into intuitive and engaging digital experiences through design and technology.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-2">
-            {["UX/UI", "React", "Tailwind", "Figma", "User testing", "Storytelling"].map((tag) => (
+            {["UX/UI", "React", "Figma", "User testing", "Storytelling"].map((tag) => (
               <span key={tag} className="bg-[#eadcc7] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em]">
                 {tag}
               </span>
@@ -1022,7 +1026,7 @@ function Projects() {
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">Selected work</p>
             <h2 className="font-serif text-5xl leading-tight text-[#2d211d] md:text-7xl">Project Pages</h2>
             <p className="mt-4 max-w-2xl leading-relaxed text-[#4d3b35]">
-              Each project opens into a detailed case study with problem, goal, process, result and reflection.
+              .
             </p>
           </div>
 
@@ -1115,12 +1119,24 @@ function Process() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative z-10 -mt-16 overflow-visible px-6 py-28 md:px-10 lg:px-14">
+    <section
+      id="contact"
+      className="relative z-10 -mt-16 overflow-visible px-6 py-24 md:px-10 lg:px-14"
+    >
       <PaperLayer className="right-6 top-8 h-[90%] w-[94%] rotate-[-1deg] bg-[#f5eadc]" />
+
+      <Decor
+        src="/decor/sparkle.png"
+        float
+        className="left-10 top-10 hidden w-12 md:block"
+      />
 
       <div className="relative z-10 mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">Contact</p>
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">
+            Contact
+          </p>
+
           <h2 className="font-serif text-5xl leading-tight text-[#2d211d] md:text-7xl">
             Let’s create
             <br />
@@ -1130,39 +1146,108 @@ function Contact() {
           </h2>
 
           <p className="mt-5 max-w-md leading-relaxed text-[#4d3b35]">
-            I’m always open to feedback, opportunities and creative conversations.
+            I'm always open to opportunities, feedback and creative
+            conversations.
           </p>
         </div>
 
-        <div className="relative bg-[#fffaf3] p-7 shadow-2xl md:p-10">
-          <Tape className="left-14 top-[-18px]" />
+        <motion.div
+          whileHover={{ y: -5, rotate: 0 }}
+          transition={{ type: "spring", stiffness: 220, damping: 18 }}
+          className="relative rotate-[1deg] bg-[#efc8d1] p-8 shadow-2xl md:p-10"
+        >
+          {/* CURRENTLY CARD */}
+          <div className="absolute right-6 top-6 rotate-[3deg] bg-[#fffaf3] p-4 shadow-xl">
+            <img
+              src="/decor/paperclip-gold.png"
+              alt=""
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="absolute right-2 top-[-10px] w-8"
+            />
 
-          <div className="space-y-5 text-[#3a2b28]">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#a06055]">
+              Currently
+            </p>
+
+            <ul className="mt-3 space-y-1 text-sm text-[#3a2b28]">
+              <li>♡ Looking for an internship</li>
+              <li>♡ ICT Media Design Student</li>
+              <li>♡ UX/UI Design</li>
+              <li>♡ Front-end Development</li>
+            </ul>
+          </div>
+
+          {/* DECORATIONS */}
+          <img
+            src="/decor/sticker-bow.png"
+            alt=""
+            onError={(e) => (e.currentTarget.style.display = "none")}
+            className="absolute left-[-59px] top-[-30px] w-30"
+          />
+
+          <img
+            src="/decor/pressed-flower.png"
+            alt=""
+            onError={(e) => (e.currentTarget.style.display = "none")}
+            className="absolute bottom-[-40px] right-[-20px] w-30 rotate-[15deg]"
+          />
+
+          <img
+            src="/decor/postmark.png"
+            alt=""
+            onError={(e) => (e.currentTarget.style.display = "none")}
+            className="absolute bottom-8 right-14 w-24 opacity-25"
+          />
+
+          {/* CONTACT INFO */}
+          <div className="max-w-[320px] space-y-5 text-[#3a2b28]">
             <p className="flex items-center gap-3">
-              <Mail size={18} /> jhachmane@gmail.com
+              <Mail size={18} />
+              jhachmane@gmail.com
             </p>
 
             <p className="flex items-center gap-3">
-              <MapPin size={18} /> The Netherlands
+              <MapPin size={18} />
+              The Netherlands
             </p>
 
-            <a href="https://www.linkedin.com/in/jasmin-h-2b0655338/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
-              <span className="font-bold">in</span> LinkedIn
+            <a
+              href="https://www.linkedin.com/in/jasmin-h-2b0655338/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 transition hover:translate-x-1"
+            >
+              <span className="font-bold">in</span>
+              LinkedIn
             </a>
 
-            <a href="https://github.com/JasminHachmane" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
-              <span className="font-bold">⌘</span> GitHub
+            <a
+              href="https://github.com/JasminHachmane"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 transition hover:translate-x-1"
+            >
+              <span className="font-bold">⌘</span>
+              GitHub
             </a>
 
-            <a href="/documents/Jasmin-Hachmane-CV.pdf" download className="flex items-center gap-3">
-              <Download size={18} /> Download CV
+            <a
+              href="/documents/Jasmin-Hachmane-CV.pdf"
+              download
+              className="flex items-center gap-3 transition hover:translate-x-1"
+            >
+              <Download size={18} />
+              Download CV
             </a>
           </div>
 
-          <p className="mt-10 rotate-[-4deg] text-right font-serif text-2xl italic text-[#4d3b35]">
-            Thanks for stopping by! ♡
+          
+
+          {/* SIGNATURE */}
+          <p className="mt-8 text-right font-serif text-2xl italic text-[#2d211d]">
+            Thanks for stopping by!
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
