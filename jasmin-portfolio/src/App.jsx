@@ -588,11 +588,10 @@ function ProjectDetail({ project, onBack }) {
 
 function Hero() {
   return (
-    <section id="home" className="relative min-h-[980px] overflow-visible px-6 pb-40 pt-8 md:px-10 lg:px-14">
+    <section id="home" className="relative min-h-[1040px] overflow-visible px-6 pb-44 pt-8 md:px-10 lg:px-14">
       <Texture />
 
       <PaperLayer className="left-3 top-10 h-[88%] w-[96%] rotate-[-1deg] bg-[#f5eadc]" />
-      <Decor src="/decor/flower.png" float className="right-10 top-24 hidden w-20 rotate-12 md:block" />
       <Decor src="/decor/sparkle.png" float className="left-1/2 top-24 hidden w-14 md:block" />
       <Decor src="/decor/heart.png" float className="bottom-20 left-14 hidden w-14 -rotate-12 lg:block" />
 
@@ -615,137 +614,163 @@ function Hero() {
       </header>
 
       <div className="relative z-10 mx-auto mt-16 max-w-[1450px]">
-        <div className="relative grid min-h-[720px] gap-0 lg:grid-cols-2">
+        <div className="relative grid min-h-[790px] gap-0 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="relative bg-[#fffaf3] p-8 shadow-2xl md:p-12 lg:p-16">
             <div className="absolute right-[-1px] top-0 hidden h-full w-[2px] bg-[#d8b08c]/40 lg:block" />
 
-            <motion.p
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="mb-6 w-fit bg-[#eadcc7] px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[#3a2b28] shadow-md"
-            >
-              Vol. III · 2025–2026 Collection
-            </motion.p>
+            <img
+              src="/decor/vintage-paper.png"
+              alt=""
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="pointer-events-none absolute left-6 top-6 z-0 hidden w-[92%] opacity-25 md:block"
+            />
 
-            <motion.p
-              initial={{ opacity: 0, x: -18 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-5xl italic text-[#c47777] md:text-6xl"
-            >
-              The
-            </motion.p>
+            <div className="relative z-10">
+              <motion.p
+                initial={{ opacity: 0, y: -12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                className="mb-6 w-fit bg-[#eadcc7] px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[#3a2b28] shadow-md"
+              >
+                Vol. III · 2025–2026 Collection
+              </motion.p>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.15 }}
-              className="mt-1 font-serif text-[4.7rem] leading-[0.78] tracking-[-0.07em] text-[#2d211d] sm:text-[6.4rem] md:text-[8rem] lg:text-[9rem]"
-            >
-              Jasmin
-              <br />
-              Archives
-            </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, x: -18 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="font-serif text-5xl italic text-[#c47777] md:text-6xl"
+              >
+                The
+              </motion.p>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.85, delay: 0.25 }}
-              className="mt-8 max-w-3xl border-l-4 border-[#c47777] pl-6 font-serif text-3xl leading-[1] text-[#3a2b28] md:text-5xl"
-            >
-              Designing digital experiences with softness, structure and story.
-            </motion.h2>
+              <motion.h1
+                initial={{ opacity: 0, y: 22 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.15 }}
+                className="mt-1 font-serif text-[4.7rem] leading-[0.78] tracking-[-0.07em] text-[#2d211d] sm:text-[6.4rem] md:text-[8rem] lg:text-[9rem]"
+              >
+                Jasmin
+                <br />
+                Archives
+              </motion.h1>
 
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-[#4d3b35]">
-              A romantic but powerful showcase of my projects, process, feedback,
-              technical growth and personal development as an ICT Media Design student.
-            </p>
+              <motion.h2
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.85, delay: 0.25 }}
+                className="mt-8 max-w-3xl border-l-4 border-[#c47777] pl-6 font-serif text-3xl leading-[1] text-[#3a2b28] md:text-5xl"
+              >
+                Designing digital experiences with softness, structure and story.
+              </motion.h2>
 
-            <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
-              {["UX/UI", "React", "Story", "Testing"].map((item) => (
-                <span
-                  key={item}
-                  className="bg-[#f2d6dc] px-3 py-3 text-center text-xs font-bold uppercase tracking-[0.14em] text-[#3a2b28] shadow-md"
+              <p className="mt-7 max-w-xl text-lg leading-relaxed text-[#4d3b35]">
+                A romantic but powerful showcase of my projects, process, feedback,
+                technical growth and personal development as an ICT Media Design student.
+              </p>
+
+              <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
+                {["UX/UI", "React", "Story", "Testing"].map((item) => (
+                  <span
+                    key={item}
+                    className="bg-[#f2d6dc] px-3 py-3 text-center text-xs font-bold uppercase tracking-[0.14em] text-[#3a2b28] shadow-md"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-9 flex flex-wrap gap-4">
+                <motion.a
+                  whileHover={{ y: -3, scale: 1.02 }}
+                  href="#projects"
+                  className="inline-flex items-center gap-3 bg-[#241916] px-6 py-4 text-sm font-bold text-[#fff8ef] shadow-xl transition hover:gap-5"
                 >
-                  {item}
-                </span>
-              ))}
-            </div>
+                  View selected work <ArrowRight size={17} />
+                </motion.a>
 
-            <div className="mt-9 flex flex-wrap gap-4">
-              <motion.a
-                whileHover={{ y: -3, scale: 1.02 }}
-                href="#projects"
-                className="inline-flex items-center gap-3 bg-[#241916] px-6 py-4 text-sm font-bold text-[#fff8ef] shadow-xl transition hover:gap-5"
-              >
-                View selected work <ArrowRight size={17} />
-              </motion.a>
+                <motion.a
+                  whileHover={{ y: -3, scale: 1.02 }}
+                  href="#contact"
+                  className="inline-flex items-center gap-3 bg-[#e8a7b2] px-6 py-4 text-sm font-bold text-[#2d211d] shadow-xl transition hover:gap-5"
+                >
+                  Let’s connect <ArrowRight size={17} />
+                </motion.a>
+              </div>
 
-              <motion.a
-                whileHover={{ y: -3, scale: 1.02 }}
-                href="#contact"
-                className="inline-flex items-center gap-3 bg-[#e8a7b2] px-6 py-4 text-sm font-bold text-[#2d211d] shadow-xl transition hover:gap-5"
-              >
-                Let’s connect <ArrowRight size={17} />
-              </motion.a>
-            </div>
-
-            <div className="absolute bottom-8 left-8 hidden text-xs font-bold uppercase tracking-[0.25em] text-[#b5796d] md:block">
-              Archive No. 03 · Jasmin Hachmane
+              <div className="absolute bottom-[-86px] left-0 hidden text-xs font-bold uppercase tracking-[0.25em] text-[#b5796d] md:block">
+                Archive No. 03 · Jasmin Hachmane
+              </div>
             </div>
           </div>
 
-          <div className="relative min-h-[760px] overflow-hidden bg-[#f7eadb] p-8 shadow-2xl md:p-12 lg:p-16">
-            <div className="absolute inset-0 opacity-[0.35] bg-[linear-gradient(90deg,transparent_49%,#d8b08c_50%,transparent_51%)]" />
+          <div className="relative min-h-[790px] overflow-hidden bg-[#e8b9bd] p-8 shadow-2xl md:p-12 lg:p-16">
+            <div className="absolute inset-0 opacity-[0.14] bg-[radial-gradient(circle_at_1px_1px,#fff8ef_1px,transparent_0)] [background-size:18px_18px]" />
+
+            <img
+              src="/decor/lace-doily.png"
+              alt=""
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="absolute bottom-[-50px] right-[-50px] z-10 hidden w-[330px] opacity-75 lg:block"
+            />
+            <img
+              src="/decor/small-photo-corner.png"
+              alt=""
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="absolute bottom-[-50px] right-[-50px] z-10 hidden w-[330px] opacity-75 lg:block"
+            />
+
+            <img
+              src="/decor/pressed-flower.png"
+              alt=""
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="absolute right-100 top-110 z-21 hidden w-[180px] rotate-12 opacity-90 lg:block"
+            />
+            <img
+              src="/decor/washi-tape-pink-green.png"
+              alt=""
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="absolute right-0 top-0 z-20 hidden w-[700px] rotate-0 opacity-90 lg:block"
+            />
 
             <motion.img
-              src="/decor/sticker-star.png"
+              src="/decor/gold-heart-locket.png"
               alt=""
-              animate={{ y: [0, -7, 0], rotate: [10, 15, 10] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              animate={{ y: [0, -8, 0], rotate: [3, 7, 3] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               onError={(e) => (e.currentTarget.style.display = "none")}
-              className="absolute right-6 top-16 z-50 hidden w-16 md:block"
+              className="absolute right-[-20px] top-[70px] z-[70] hidden w-[180px] xl:w-[240px] 2xl:w-[280px] lg:block"
             />
 
             <motion.img
               src="/decor/sticker-bow.png"
               alt=""
-              animate={{ y: [0, 6, 0], rotate: [-8, -4, -8] }}
+              animate={{ y: [0, -5, 0], rotate: [-6, -2, -6] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               onError={(e) => (e.currentTarget.style.display = "none")}
-              className="absolute left-6 bottom-28 z-40 hidden w-20 lg:block"
+              className="absolute left-[43%] top-6 z-[70] hidden w-24 md:block"
             />
 
-            <motion.img
-              src="/decor/sticker-flower-2.png"
-              alt=""
-              animate={{ y: [0, -6, 0], rotate: [12, 16, 12] }}
-              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-              onError={(e) => (e.currentTarget.style.display = "none")}
-              className="absolute right-2 top-[420px] z-50 hidden w-20 md:block"
-            />
-
-            <img
-              src="/decor/stamp.png"
-              alt=""
-              onError={(e) => (e.currentTarget.style.display = "none")}
-              className="absolute right-[-12px] bottom-32 z-10 hidden w-28 rotate-[12deg] opacity-80 lg:block"
-            />
-
-            <div className="absolute right-10 top-8 z-20 hidden bg-[#e8a7b2] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#2d211d] shadow-md md:block">
+            <div className="absolute right-10 top-8 z-30 hidden bg-[#c47777]/85 px-5 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#fff8ef] shadow-md md:block">
               Digital scrapbook
             </div>
 
-            <div className="absolute right-24 top-20 z-20 hidden bg-[#eadcc7] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#2d211d] shadow-md lg:block">
+            <div className="absolute right-28 top-20 z-30 hidden bg-[#fff8ef] px-5 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#2d211d] shadow-md lg:block">
               UX/UI designer
             </div>
 
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute left-8 top-10 z-20 bg-[#fff2a9] p-5 shadow-xl"
+              className="absolute left-10 top-14 z-30 bg-[#fff2a9] p-5 shadow-xl"
             >
+              <img
+                src="/decor/paperclip.png"
+                alt=""
+                onError={(e) => (e.currentTarget.style.display = "none")}
+                className="absolute right-3 top-[-12px] w-15"
+              />
+
               <p className="font-serif text-2xl italic text-[#2d211d]">
                 Available for
                 <br />
@@ -756,96 +781,165 @@ function Hero() {
               </p>
             </motion.div>
 
-            <div className="absolute left-8 top-[180px] z-20 hidden md:block">
+            <div className="absolute left-14 top-[230px] z-30 hidden md:block">
               <img
                 src="/decor/ticket.png"
                 alt=""
                 onError={(e) => (e.currentTarget.style.display = "none")}
-                className="w-36 rotate-[-6deg] drop-shadow-lg"
+                className="w-40 rotate-[-7deg] drop-shadow-xl"
               />
             </div>
+
+            <motion.img
+              src="/decor/postcard-ict.png"
+              alt=""
+              initial={{ rotate: -8, opacity: 0, y: 20 }}
+              animate={{ rotate: -8, opacity: 1, y: 0 }}
+              whileHover={{ rotate: -4, scale: 1.03 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="absolute left-8 top-[315px] z-20 hidden w-[200px] drop-shadow-xl lg:block"
+            />
 
             <motion.div
               initial={{ rotate: 4, opacity: 0, y: 30 }}
               animate={{ rotate: 4, opacity: 1, y: 0 }}
               whileHover={{ y: -10, rotate: 1, scale: 1.025 }}
               transition={{ duration: 0.8 }}
-              className="absolute right-10 top-28 z-30 w-[280px] bg-[#fffaf3] p-4 pb-12 shadow-2xl sm:w-[370px]"
+              className="absolute right-12 top-[165px] z-50 w-[250px] bg-[#fffaf3] p-4 pb-12 shadow-2xl sm:w-[300px]"
             >
-              <Tape className="left-20 top-[-18px] rotate-[-6deg]" />
-              <div className="h-[330px] bg-[#eadcc7] bg-[url('/images/me.jpg')] bg-cover bg-center shadow-inner sm:h-[400px]" />
-              <p className="mt-4 text-center font-serif text-xl italic text-[#3a2b28]">
-                Soft visuals. Strong ideas.
+              <img
+                src="/decor/masking-tape-pink.png"
+                alt=""
+                onError={(e) => (e.currentTarget.style.display = "none")}
+                className="absolute left-1/2 top-[-18px] z-50 w-28 -translate-x-1/2 rotate-[3deg]"
+              />
+
+              <div className="h-[295px] bg-[#eadcc7] bg-[url('/images/me.jpg')] bg-cover bg-center shadow-inner sm:h-[330px]" />
+
+              <p className="mt-4 text-center font-serif text-xl italic leading-tight text-[#3a2b28]">
+                Soft visuals.
+                <br />
+                Strong ideas.
               </p>
             </motion.div>
+
+            <motion.img
+              src="/decor/sticker-star.png"
+              alt=""
+              animate={{ y: [0, -7, 0], rotate: [10, 15, 10] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="absolute right-8 top-[295px] z-[75] hidden w-14 md:block"
+            />
+
+            <motion.img
+              src="/decor/sticker-flower-2.png"
+              alt=""
+              animate={{ y: [0, -6, 0], rotate: [12, 16, 12] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="absolute right-10 top-[570px] z-[75] hidden w-20 md:block"
+            />
 
             <motion.div
               initial={{ rotate: -7, opacity: 0, y: 20 }}
               animate={{ rotate: -7, opacity: 1, y: 0 }}
               whileHover={{ rotate: -2, scale: 1.04 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="absolute left-10 top-[280px] z-20 hidden bg-[#fffaf3] p-2 shadow-xl md:block"
+              className="absolute left-12 top-[580px] z-35 hidden bg-[#fffaf3] p-3 shadow-xl md:block"
             >
               <img
                 src="/decor/paperclip.png"
                 alt=""
                 onError={(e) => (e.currentTarget.style.display = "none")}
-                className="absolute left-[-10px] top-[-10px] z-50 hidden w-8 md:block"
+                className="absolute left-[-10px] top-[-10px] z-50 w-18"
+              />
+
+              <img
+                src="/decor/sticker-butterfly.png"
+                alt=""
+                onError={(e) => (e.currentTarget.style.display = "none")}
+                className="absolute right-[-22px] top-[-22px] z-[80] w-25 rotate-[15deg]"
               />
 
               <div
                 className="h-28 w-28 bg-[#eadcc7] bg-cover bg-center"
                 style={{ backgroundImage: "url('/images/project-1.jpg')" }}
               />
+
               <p className="mt-2 text-center font-serif text-sm italic text-[#3a2b28]">
                 story concept
               </p>
             </motion.div>
+
+            <div className="absolute left-[42%] bottom-[215px] z-30 hidden w-[200px] rotate-[-3deg] bg-[#fff8ef] p-5 shadow-xl lg:block">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c47777]">
+                Current focus
+              </p>
+              <p className="mt-2 font-serif text-lg italic leading-tight text-[#2d211d]">
+                Creating a portfolio that feels personal, layered and memorable.
+              </p>
+            </div>
 
             <motion.div
               initial={{ rotate: 6, opacity: 0, y: 20 }}
               animate={{ rotate: 6, opacity: 1, y: 0 }}
               whileHover={{ rotate: 2, scale: 1.04 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="absolute left-20 bottom-24 z-20 hidden bg-[#fffaf3] p-2 shadow-xl lg:block"
+              className="absolute right-12 bottom-22 z-40 hidden bg-[#fffaf3] p-3 shadow-xl lg:block"
             >
               <img
                 src="/decor/paperclip.png"
                 alt=""
                 onError={(e) => (e.currentTarget.style.display = "none")}
-                className="absolute right-[-8px] top-[-10px] z-50 hidden w-8 md:block"
+                className="absolute right-[-8px] top-[-10px] z-50 w-15"
               />
 
               <div
                 className="h-24 w-32 bg-[#eadcc7] bg-cover bg-center"
                 style={{ backgroundImage: "url('/images/project-2.jpg')" }}
               />
+
               <p className="mt-2 text-center font-serif text-sm italic text-[#3a2b28]">
                 branding
               </p>
             </motion.div>
 
+            <div className="absolute left-12 bottom-8 z-30 hidden bg-[#efc8d1] p-5 shadow-xl lg:block">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#2d211d]">
+                Archive Log
+              </p>
+
+              <ul className="mt-3 space-y-1 text-sm text-[#3a2b28]">
+                <li>♡ UX/UI Design</li>
+                <li>♡ Front-end Development</li>
+                <li>♡ Storytelling</li>
+                <li>♡ User Testing</li>
+              </ul>
+            </div>
+
             <motion.div
               animate={{ rotate: [-2, 2, -2] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-24 right-10 z-40 hidden md:block"
+              className="absolute bottom-10 right-[230px] z-30 hidden md:block"
             >
-              <Stamp>
-                Creative
-                <br />
-                2026
-                <br />
-                Portfolio
-              </Stamp>
+              <div className="relative">
+                <img
+                  src="/decor/stamp.png"
+                  alt=""
+                  onError={(e) => (e.currentTarget.style.display = "none")}
+                  className="w-26 rotate-[4deg] drop-shadow-lg"
+                />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center font-serif text-[8px] uppercase tracking-[0.12em] text-[#7b4d45]">
+                  Creative
+                  <br />
+                  2026
+                  <br />
+                  Portfolio
+                </div>
+              </div>
             </motion.div>
-
-            <motion.p
-              animate={{ x: [0, 8, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-8 left-10 z-20 hidden font-serif text-5xl italic text-[#c47777]/70 lg:block"
-            >
-              collecting ideas ♡
-            </motion.p>
           </div>
         </div>
       </div>
