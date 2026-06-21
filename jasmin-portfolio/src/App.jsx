@@ -95,7 +95,7 @@ const projects = [
     title: "Portfolio",
     category: "React · Tailwind · Framer Motion",
     text: "My personal showcase portfolio, designed as a layered digital scrapbook.",
-    image: "/images/project-4.jpg",
+    image: "/images/port.png",
     color: "bg-[#d8b08c]",
     details: {
       client: "Personal showcase portfolio",
@@ -299,12 +299,37 @@ function ArchiveMarquee() {
     </section>
   );
 }
-
 function WhatICreate() {
   return (
     <section className="relative z-30 -mt-16 overflow-visible px-6 py-28 md:px-10 lg:px-14">
       <PaperLayer className="left-5 top-8 h-[90%] w-[95%] rotate-[1deg] bg-[#f7eadb]" />
-      <Decor src="/decor/heart.png" float className="right-12 top-20 hidden w-14 md:block" />
+
+      {/* background decorations */}
+      <img
+        src="/decor/lace-doily.png"
+        alt=""
+        onError={(e) => (e.currentTarget.style.display = "none")}
+        className="pointer-events-none absolute right-[-45px] top-20 z-0 hidden w-[260px] rotate-[12deg] opacity-35 lg:block"
+      />
+
+      <img
+        src="/decor/pressed-flower.png"
+        alt=""
+        onError={(e) => (e.currentTarget.style.display = "none")}
+        className="pointer-events-none absolute left-8 bottom-16 z-20 hidden w-28 rotate-[-14deg] opacity-80 md:block"
+      />
+
+      <Decor
+        src="/decor/heart.png"
+        float
+        className="right-12 top-20 hidden w-14 md:block"
+      />
+
+      <Decor
+        src="/decor/sparkle.png"
+        float
+        className="left-[48%] top-16 hidden w-12 md:block"
+      />
 
       <div className="relative z-10 mx-auto max-w-[1400px]">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">
@@ -326,11 +351,38 @@ function WhatICreate() {
                 key={service.title}
                 whileHover={{ y: -10, rotate: 0, scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 220, damping: 18 }}
-                className={`relative bg-[#fffaf3] p-7 shadow-2xl ${
+                className={`relative overflow-visible bg-[#fffaf3] p-7 shadow-2xl ${
                   index === 1 ? "rotate-[1deg]" : "rotate-[-1deg]"
                 }`}
               >
                 <Tape className="left-10 top-[-17px] rotate-[-6deg]" />
+
+                {index === 0 && (
+                  <img
+                    src="/decor/sticker-butterfly.png"
+                    alt=""
+                    onError={(e) => (e.currentTarget.style.display = "none")}
+                    className="absolute right-[-22px] top-[-24px] z-40 w-16 rotate-[16deg]"
+                  />
+                )}
+
+                {index === 1 && (
+                  <img
+                    src="/decor/paperclip-gold.png"
+                    alt=""
+                    onError={(e) => (e.currentTarget.style.display = "none")}
+                    className="absolute right-5 top-[-16px] z-40 w-10 rotate-[8deg]"
+                  />
+                )}
+
+                {index === 2 && (
+                  <img
+                    src="/decor/sticker-bow.png"
+                    alt=""
+                    onError={(e) => (e.currentTarget.style.display = "none")}
+                    className="absolute right-[-18px] top-[-20px] z-40 w-20 rotate-[10deg]"
+                  />
+                )}
 
                 <span className="bg-[#e8a7b2] px-3 py-1 text-xs font-bold uppercase tracking-[0.16em]">
                   {service.tag}
@@ -392,69 +444,66 @@ function FeaturedCasePreview() {
   );
 }
 
-function DesignValues() {
+
+function ProjectCollage() {
+  const collageImages = [
+    "/images/project-1.png",
+    "/images/project-3.png",
+    "/images/project-aurora.png",
+    "/images/project-4.png",
+    "/images/project-dezcartes.png",
+  ];
+
+  const duplicatedImages = [...collageImages, ...collageImages];
+
   return (
-    <section className="relative z-20 -mt-16 overflow-visible px-6 py-28 md:px-10 lg:px-14">
-      <PaperLayer className="left-4 top-8 h-[88%] w-[96%] rotate-[1deg] bg-[#eadcc7]" />
-
-      <div className="relative z-10 mx-auto max-w-[1400px]">
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">
-          Design values
-        </p>
-
-        <h2 className="font-serif text-5xl leading-tight text-[#2d211d] md:text-7xl">
-          The little things
-          <br />
-          I design for.
-        </h2>
-
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
-          {values.map((value, index) => (
-            <motion.div
-              key={value}
-              whileHover={{ y: -8, scale: 1.04 }}
-              transition={{ type: "spring", stiffness: 220, damping: 18 }}
-              className="bg-[#fffaf3] p-5 text-center shadow-xl"
-            >
-              <p className="font-serif text-3xl text-[#b5796d]">
-                0{index + 1}
-              </p>
-              <p className="mt-3 text-sm font-bold uppercase tracking-[0.14em] text-[#2d211d]">
-                {value}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FeedbackWall() {
-  return (
-    <section className="relative z-20 -mt-20 overflow-visible px-6 py-28 md:px-10 lg:px-14">
+    <section className="relative z-20 -mt-20 overflow-hidden px-6 py-28 md:px-10 lg:px-14">
       <PaperLayer className="right-6 top-10 h-[90%] w-[94%] rotate-[-1deg] bg-[#f7eadb]" />
 
+      <Decor
+        src="/decor/pressed-flower.png"
+        float
+        className="right-12 top-14 hidden w-40 md:block"
+      />
+
       <div className="relative z-10 mx-auto max-w-[1400px]">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">
-          Feedback wall
+          Project archive
         </p>
 
         <h2 className="font-serif text-5xl leading-tight text-[#2d211d] md:text-7xl">
-          Notes that shaped
-          <br />
-          this portfolio.
+          A moving collection
         </h2>
 
-        <div className="mt-10 grid gap-7 md:grid-cols-2 lg:grid-cols-4">
-          {feedbackNotes.map((note, index) => (
-            <Note
-              key={note}
-              className={`${index % 2 === 0 ? "rotate-[-3deg]" : "rotate-[3deg]"}`}
-            >
-              {note}
-            </Note>
-          ))}
+        <div className="relative mt-14 overflow-hidden py-10">
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              duration: 28,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="flex w-max gap-10"
+          >
+            {duplicatedImages.map((image, index) => (
+              <motion.div
+                key={`${image}-${index}`}
+                whileHover={{ y: -10, rotate: 0, scale: 1.03 }}
+                className={`relative w-[280px] shrink-0 bg-[#fffaf3] p-3 pb-8 shadow-2xl ${
+                  index % 2 === 0 ? "rotate-[-3deg]" : "rotate-[3deg]"
+                }`}
+              >
+                <Tape className="left-1/2 top-[-16px] -translate-x-1/2 rotate-[-5deg]" />
+
+                <img
+                  src={image}
+                  alt=""
+                  onError={(e) => (e.currentTarget.style.display = "none")}
+                  className="h-[260px] w-full object-cover shadow-inner"
+                />
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
@@ -1087,7 +1136,7 @@ function Process() {
   </h2>
 
   <p className="mt-5 text-sm leading-relaxed text-[#4d3b35]">
-    I build from research to design, from feedback to iteration, and from prototype to final product.
+    I build from research to design, from feedback to iteration and from prototype to final product.
   </p>
 
         </div>
@@ -1128,7 +1177,7 @@ function Contact() {
       <Decor
         src="/decor/sparkle.png"
         float
-        className="left-10 top-10 hidden w-12 md:block"
+        className="left-10 top-10 hidden w-16 md:block"
       />
 
       <div className="relative z-10 mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -1265,9 +1314,8 @@ export default function App() {
         <Reveal><Projects /></Reveal>
         <Reveal><About /></Reveal>
         <Reveal><WhatICreate /></Reveal>
-        <Reveal><DesignValues /></Reveal>
         <Reveal><Process /></Reveal>
-        <Reveal><FeedbackWall /></Reveal>
+        <Reveal><ProjectCollage /></Reveal>
         <Reveal><FinalCTA /></Reveal>
         <Reveal><Contact /></Reveal>
 
