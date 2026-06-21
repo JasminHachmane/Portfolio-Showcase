@@ -10,6 +10,10 @@ import {
   Code2,
   Send,
   Menu,
+  Sparkles,
+  Layers,
+  Heart,
+  Eye,
 } from "lucide-react";
 
 const projects = [
@@ -116,6 +120,36 @@ const steps = [
   { number: "02", title: "Design", icon: Pencil, text: "Moodboards, wireframes, visual direction and prototypes." },
   { number: "03", title: "Develop", icon: Code2, text: "React components, Tailwind styling and responsive layouts." },
   { number: "04", title: "Deliver", icon: Send, text: "Testing, polishing, documenting and presenting my growth." },
+];
+
+const services = [
+  {
+    title: "Digital Experiences",
+    text: "I design interfaces that feel clear, personal and easy to use.",
+    tag: "UX/UI",
+    icon: Eye,
+  },
+  {
+    title: "Creative Front-end",
+    text: "I translate visual concepts into responsive React and Tailwind websites.",
+    tag: "Code",
+    icon: Code2,
+  },
+  {
+    title: "Storytelling Concepts",
+    text: "I create concepts that combine visuals, emotion and interaction.",
+    tag: "Concept",
+    icon: Sparkles,
+  },
+];
+
+const values = ["Empathy", "Creativity", "Clarity", "Detail", "Growth", "Impact"];
+
+const feedbackNotes = [
+  "Think in layers, not blocks.",
+  "Make the portfolio feel like a real scrapbook experience.",
+  "Responsive design should be considered from the start.",
+  "Show the process, not only the final result.",
 ];
 
 function Texture() {
@@ -236,6 +270,232 @@ function Reveal({ children, delay = 0 }) {
   );
 }
 
+function ArchiveMarquee() {
+  return (
+    <section className="relative z-[999] -mt-20 -mb-8 overflow-visible px-0">
+      <div className="relative left-1/2 w-screen -translate-x-1/2 rotate-[-1deg] bg-[#2d211d] py-5 text-[#fff8ef] shadow-2xl">
+
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+          className="flex w-max gap-10 whitespace-nowrap text-sm font-bold uppercase tracking-[0.25em]"
+        >
+          {[...Array(2)].map((_, i) => (
+            <div key={i} className="flex gap-10">
+              <span>UX/UI Design</span>
+              <span>✦</span>
+              <span>Front-end Development</span>
+              <span>✦</span>
+              <span>Storytelling</span>
+              <span>✦</span>
+              <span>User Testing</span>
+              <span>✦</span>
+              <span>Creative Concepting</span>
+              <span>✦</span>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function WhatICreate() {
+  return (
+    <section className="relative z-30 -mt-16 overflow-visible px-6 py-28 md:px-10 lg:px-14">
+      <PaperLayer className="left-5 top-8 h-[90%] w-[95%] rotate-[1deg] bg-[#f7eadb]" />
+      <Decor src="/decor/heart.png" float className="right-12 top-20 hidden w-14 md:block" />
+
+      <div className="relative z-10 mx-auto max-w-[1400px]">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">
+          What I create
+        </p>
+
+        <h2 className="font-serif text-5xl leading-tight text-[#2d211d] md:text-7xl">
+          Design with purpose,
+          <br />
+          code with personality.
+        </h2>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+
+            return (
+              <motion.div
+                key={service.title}
+                whileHover={{ y: -10, rotate: 0, scale: 1.03 }}
+                transition={{ type: "spring", stiffness: 220, damping: 18 }}
+                className={`relative bg-[#fffaf3] p-7 shadow-2xl ${
+                  index === 1 ? "rotate-[1deg]" : "rotate-[-1deg]"
+                }`}
+              >
+                <Tape className="left-10 top-[-17px] rotate-[-6deg]" />
+
+                <span className="bg-[#e8a7b2] px-3 py-1 text-xs font-bold uppercase tracking-[0.16em]">
+                  {service.tag}
+                </span>
+
+                <Icon className="mt-8 text-[#b5796d]" size={36} />
+
+                <h3 className="mt-6 font-serif text-4xl text-[#2d211d]">
+                  {service.title}
+                </h3>
+
+                <p className="mt-4 leading-relaxed text-[#4d3b35]">
+                  {service.text}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FeaturedCasePreview() {
+  return (
+    <section className="relative z-30 -mt-20 overflow-visible px-6 py-28 md:px-10 lg:px-14">
+      <PaperLayer className="right-5 top-10 h-[90%] w-[95%] rotate-[-1deg] bg-[#f5eadc]" />
+      <Decor src="/decor/flower.png" float className="right-12 top-16 hidden w-20 md:block" />
+
+      <div className="relative z-10 mx-auto grid max-w-[1400px] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">
+            Featured case
+          </p>
+
+          <h2 className="font-serif text-5xl leading-tight text-[#2d211d] md:text-7xl">
+            Mijn Sprookje
+          </h2>
+
+          <p className="mt-5 max-w-xl leading-relaxed text-[#4d3b35]">
+            A Gen-AI storytelling concept for children aged 4 to 6. This project
+            combines user research, playful UX/UI design, visual storytelling and
+            testing with young users.
+          </p>
+
+          <Note className="mt-8 max-w-md">
+            This was the first time I designed for children aged 4–6, so every
+            choice had to be simple, visual and playful.
+          </Note>
+        </div>
+
+        <Polaroid
+          image="/images/project-1.jpg"
+          caption="featured project · Mijn Sprookje"
+          className="rotate-[3deg]"
+        />
+      </div>
+    </section>
+  );
+}
+
+function DesignValues() {
+  return (
+    <section className="relative z-20 -mt-16 overflow-visible px-6 py-28 md:px-10 lg:px-14">
+      <PaperLayer className="left-4 top-8 h-[88%] w-[96%] rotate-[1deg] bg-[#eadcc7]" />
+
+      <div className="relative z-10 mx-auto max-w-[1400px]">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">
+          Design values
+        </p>
+
+        <h2 className="font-serif text-5xl leading-tight text-[#2d211d] md:text-7xl">
+          The little things
+          <br />
+          I design for.
+        </h2>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+          {values.map((value, index) => (
+            <motion.div
+              key={value}
+              whileHover={{ y: -8, scale: 1.04 }}
+              transition={{ type: "spring", stiffness: 220, damping: 18 }}
+              className="bg-[#fffaf3] p-5 text-center shadow-xl"
+            >
+              <p className="font-serif text-3xl text-[#b5796d]">
+                0{index + 1}
+              </p>
+              <p className="mt-3 text-sm font-bold uppercase tracking-[0.14em] text-[#2d211d]">
+                {value}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FeedbackWall() {
+  return (
+    <section className="relative z-20 -mt-20 overflow-visible px-6 py-28 md:px-10 lg:px-14">
+      <PaperLayer className="right-6 top-10 h-[90%] w-[94%] rotate-[-1deg] bg-[#f7eadb]" />
+
+      <div className="relative z-10 mx-auto max-w-[1400px]">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#a06055]">
+          Feedback wall
+        </p>
+
+        <h2 className="font-serif text-5xl leading-tight text-[#2d211d] md:text-7xl">
+          Notes that shaped
+          <br />
+          this portfolio.
+        </h2>
+
+        <div className="mt-10 grid gap-7 md:grid-cols-2 lg:grid-cols-4">
+          {feedbackNotes.map((note, index) => (
+            <Note
+              key={note}
+              className={`${index % 2 === 0 ? "rotate-[-3deg]" : "rotate-[3deg]"}`}
+            >
+              {note}
+            </Note>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FinalCTA() {
+  return (
+    <section className="relative z-20 -mt-16 overflow-visible px-6 py-32 md:px-10 lg:px-14">
+      <PaperLayer className="left-5 top-8 h-[86%] w-[95%] rotate-[1deg] bg-[#2d211d]" />
+      <Decor src="/decor/sparkle.png" float className="left-12 top-16 hidden w-14 md:block" />
+      <Decor src="/decor/heart.png" float className="right-20 bottom-20 hidden w-14 lg:block" />
+
+      <div className="relative z-10 mx-auto max-w-[1200px] text-center text-[#fff8ef]">
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-[#e8a7b2]">
+          Open for opportunities
+        </p>
+
+        <h2 className="font-serif text-5xl leading-[0.95] text-[#3a2b28] md:text-8xl">
+          Looking for a creative
+          <br />
+          UX/UI intern?
+        </h2>
+
+        <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-[#3a2b28]">
+          I love creating digital experiences with personality, structure and
+          feeling. Let’s connect if you are looking for someone who combines
+          design, storytelling and front-end development.
+        </p>
+
+        <a
+          href="mailto:jhachmane@gmail.com"
+          className="mt-9 inline-flex items-center gap-3 bg-[#e8a7b2] px-7 py-4 text-sm font-bold uppercase tracking-[0.14em] text-[#2d211d] shadow-xl transition hover:gap-5"
+        >
+          Contact me <ArrowRight size={17} />
+        </a>
+      </div>
+    </section>
+  );
+}
+
 function ProjectDetail({ project, onBack }) {
   return (
     <section className="relative z-40 -mt-20 overflow-visible px-6 py-24 md:px-10 lg:px-14">
@@ -328,16 +588,13 @@ function ProjectDetail({ project, onBack }) {
 
 function Hero() {
   return (
-    <section id="home" className="relative min-h-[760px] overflow-visible px-6 pb-36 pt-8 md:px-10 lg:px-14">
+    <section id="home" className="relative min-h-[980px] overflow-visible px-6 pb-40 pt-8 md:px-10 lg:px-14">
       <Texture />
 
       <PaperLayer className="left-3 top-10 h-[88%] w-[96%] rotate-[-1deg] bg-[#f5eadc]" />
-      <PaperLayer className="right-8 top-24 hidden h-72 w-56 rotate-[7deg] bg-[#e8a7b2]/50 md:block" />
-      <PaperLayer className="left-10 bottom-16 hidden h-56 w-80 rotate-[-5deg] bg-[#d8c49f]/60 lg:block" />
-
       <Decor src="/decor/flower.png" float className="right-10 top-24 hidden w-20 rotate-12 md:block" />
-      <Decor src="/decor/sparkle.png" float className="left-1/2 top-28 hidden w-14 md:block" />
-      <Decor src="/decor/heart.png" float className="bottom-24 left-16 hidden w-14 -rotate-12 lg:block" />
+      <Decor src="/decor/sparkle.png" float className="left-1/2 top-24 hidden w-14 md:block" />
+      <Decor src="/decor/heart.png" float className="bottom-20 left-14 hidden w-14 -rotate-12 lg:block" />
 
       <header className="relative z-40 mx-auto flex max-w-[1500px] items-center justify-between gap-4">
         <div className="relative rotate-[-2deg] bg-[#fff8ef] px-7 py-4 shadow-xl">
@@ -346,8 +603,8 @@ function Hero() {
 
         <nav className="hidden items-center gap-8 text-xs font-bold uppercase tracking-[0.16em] text-[#2d211d] md:flex">
           <a href="#home">Home</a>
-          <a href="#about">About</a>
           <a href="#projects">Projects</a>
+          <a href="#about">About</a>
           <a href="#process">Process</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -357,90 +614,239 @@ function Hero() {
         </button>
       </header>
 
-      <div className="relative z-10 mx-auto mt-16 grid max-w-[1500px] items-center gap-12 lg:grid-cols-[1fr_0.95fr]">
-        <div>
-          <motion.p
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="mb-4 w-fit bg-[#fff8ef] px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[#a06055] shadow-md"
-          >
-            Vol. III · 2025–2026 Collection
-          </motion.p>
+      <div className="relative z-10 mx-auto mt-16 max-w-[1450px]">
+        <div className="relative grid min-h-[720px] gap-0 lg:grid-cols-2">
+          <div className="relative bg-[#fffaf3] p-8 shadow-2xl md:p-12 lg:p-16">
+            <div className="absolute right-[-1px] top-0 hidden h-full w-[2px] bg-[#d8b08c]/40 lg:block" />
 
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-5xl italic text-[#c47777] md:text-6xl"
-          >
-            The
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.15 }}
-            className="mt-1 font-serif text-6xl leading-[0.88] tracking-[-0.05em] text-[#2d211d] sm:text-7xl md:text-8xl lg:text-9xl"
-          >
-            Jasmin
-            <br />
-            Archives
-          </motion.h1>
-
-          <p className="mt-6 max-w-md text-xs font-bold uppercase tracking-[0.22em] text-[#a06055]">
-            ICT Media Design · Showcase Portfolio
-          </p>
-
-          <p className="mt-5 max-w-lg text-lg leading-relaxed text-[#4d3b35]">
-            A layered digital scrapbook about my projects, process, feedback, technical growth and personal development.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-4">
-            <motion.a
-              whileHover={{ y: -3, scale: 1.02 }}
-              href="#projects"
-              className="inline-flex items-center gap-3 bg-[#241916] px-6 py-4 text-sm font-bold text-[#fff8ef] shadow-xl transition hover:gap-5"
+            <motion.p
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="mb-6 w-fit bg-[#eadcc7] px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[#3a2b28] shadow-md"
             >
-              Explore my work <ArrowRight size={17} />
-            </motion.a>
+              Vol. III · 2025–2026 Collection
+            </motion.p>
 
-            <motion.a
-              whileHover={{ y: -3, scale: 1.02 }}
-              href="#process"
-              className="inline-flex items-center gap-3 bg-[#fff8ef] px-6 py-4 text-sm font-bold text-[#3a2b28] shadow-xl transition hover:gap-5"
+            <motion.p
+              initial={{ opacity: 0, x: -18 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="font-serif text-5xl italic text-[#c47777] md:text-6xl"
             >
-              View process <ArrowRight size={17} />
-            </motion.a>
+              The
+            </motion.p>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.15 }}
+              className="mt-1 font-serif text-[4.7rem] leading-[0.78] tracking-[-0.07em] text-[#2d211d] sm:text-[6.4rem] md:text-[8rem] lg:text-[9rem]"
+            >
+              Jasmin
+              <br />
+              Archives
+            </motion.h1>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, delay: 0.25 }}
+              className="mt-8 max-w-3xl border-l-4 border-[#c47777] pl-6 font-serif text-3xl leading-[1] text-[#3a2b28] md:text-5xl"
+            >
+              Designing digital experiences with softness, structure and story.
+            </motion.h2>
+
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-[#4d3b35]">
+              A romantic but powerful showcase of my projects, process, feedback,
+              technical growth and personal development as an ICT Media Design student.
+            </p>
+
+            <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
+              {["UX/UI", "React", "Story", "Testing"].map((item) => (
+                <span
+                  key={item}
+                  className="bg-[#f2d6dc] px-3 py-3 text-center text-xs font-bold uppercase tracking-[0.14em] text-[#3a2b28] shadow-md"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-9 flex flex-wrap gap-4">
+              <motion.a
+                whileHover={{ y: -3, scale: 1.02 }}
+                href="#projects"
+                className="inline-flex items-center gap-3 bg-[#241916] px-6 py-4 text-sm font-bold text-[#fff8ef] shadow-xl transition hover:gap-5"
+              >
+                View selected work <ArrowRight size={17} />
+              </motion.a>
+
+              <motion.a
+                whileHover={{ y: -3, scale: 1.02 }}
+                href="#contact"
+                className="inline-flex items-center gap-3 bg-[#e8a7b2] px-6 py-4 text-sm font-bold text-[#2d211d] shadow-xl transition hover:gap-5"
+              >
+                Let’s connect <ArrowRight size={17} />
+              </motion.a>
+            </div>
+
+            <div className="absolute bottom-8 left-8 hidden text-xs font-bold uppercase tracking-[0.25em] text-[#b5796d] md:block">
+              Archive No. 03 · Jasmin Hachmane
+            </div>
           </div>
-        </div>
 
-        <div className="relative min-h-[520px]">
-          <PaperLayer className="left-4 top-12 hidden h-[410px] w-[300px] rotate-[-8deg] bg-[#d8c49f]/70 sm:block" />
-          <PaperLayer className="right-2 top-2 h-[430px] w-[285px] rotate-[6deg] bg-[#e7b4bd]/60 sm:w-[350px]" />
+          <div className="relative min-h-[760px] overflow-hidden bg-[#f7eadb] p-8 shadow-2xl md:p-12 lg:p-16">
+            <div className="absolute inset-0 opacity-[0.35] bg-[linear-gradient(90deg,transparent_49%,#d8b08c_50%,transparent_51%)]" />
 
-          <motion.div
-            initial={{ rotate: 5, opacity: 0, y: 30 }}
-            animate={{ rotate: 5, opacity: 1, y: 0 }}
-            whileHover={{ y: -8, rotate: 2, scale: 1.02 }}
-            transition={{ duration: 0.8 }}
-            className="absolute right-3 top-8 w-[285px] bg-[#fffaf3] p-4 pb-12 shadow-2xl sm:w-[360px]"
-          >
-            <Tape className="left-20 top-[-18px] rotate-[-6deg]" />
-            <div className="h-[320px] bg-[#eadcc7] bg-[url('/images/me.jpg')] bg-cover bg-center shadow-inner sm:h-[370px]" />
-            <p className="mt-4 text-center font-serif text-xl italic text-[#3a2b28]">Designing with feeling ♡</p>
-          </motion.div>
+            <motion.img
+              src="/decor/sticker-star.png"
+              alt=""
+              animate={{ y: [0, -7, 0], rotate: [10, 15, 10] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="absolute right-6 top-16 z-50 hidden w-16 md:block"
+            />
 
-          
+            <motion.img
+              src="/decor/sticker-bow.png"
+              alt=""
+              animate={{ y: [0, 6, 0], rotate: [-8, -4, -8] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="absolute left-6 bottom-28 z-40 hidden w-20 lg:block"
+            />
 
+            <motion.img
+              src="/decor/sticker-flower-2.png"
+              alt=""
+              animate={{ y: [0, -6, 0], rotate: [12, 16, 12] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="absolute right-2 top-[420px] z-50 hidden w-20 md:block"
+            />
 
-          <Stamp className="absolute bottom-28 right-1 hidden md:flex">
-            Creative
-            <br />
-            2026
-            <br />
-            Portfolio
-          </Stamp>
+            <img
+              src="/decor/stamp.png"
+              alt=""
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="absolute right-[-12px] bottom-32 z-10 hidden w-28 rotate-[12deg] opacity-80 lg:block"
+            />
+
+            <div className="absolute right-10 top-8 z-20 hidden bg-[#e8a7b2] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#2d211d] shadow-md md:block">
+              Digital scrapbook
+            </div>
+
+            <div className="absolute right-24 top-20 z-20 hidden bg-[#eadcc7] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#2d211d] shadow-md lg:block">
+              UX/UI designer
+            </div>
+
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute left-8 top-10 z-20 bg-[#fff2a9] p-5 shadow-xl"
+            >
+              <p className="font-serif text-2xl italic text-[#2d211d]">
+                Available for
+                <br />
+                UX/UI internship
+              </p>
+              <p className="mt-3 text-xs font-bold uppercase tracking-[0.18em] text-[#c47777]">
+                2026
+              </p>
+            </motion.div>
+
+            <div className="absolute left-8 top-[180px] z-20 hidden md:block">
+              <img
+                src="/decor/ticket.png"
+                alt=""
+                onError={(e) => (e.currentTarget.style.display = "none")}
+                className="w-36 rotate-[-6deg] drop-shadow-lg"
+              />
+            </div>
+
+            <motion.div
+              initial={{ rotate: 4, opacity: 0, y: 30 }}
+              animate={{ rotate: 4, opacity: 1, y: 0 }}
+              whileHover={{ y: -10, rotate: 1, scale: 1.025 }}
+              transition={{ duration: 0.8 }}
+              className="absolute right-10 top-28 z-30 w-[280px] bg-[#fffaf3] p-4 pb-12 shadow-2xl sm:w-[370px]"
+            >
+              <Tape className="left-20 top-[-18px] rotate-[-6deg]" />
+              <div className="h-[330px] bg-[#eadcc7] bg-[url('/images/me.jpg')] bg-cover bg-center shadow-inner sm:h-[400px]" />
+              <p className="mt-4 text-center font-serif text-xl italic text-[#3a2b28]">
+                Soft visuals. Strong ideas.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ rotate: -7, opacity: 0, y: 20 }}
+              animate={{ rotate: -7, opacity: 1, y: 0 }}
+              whileHover={{ rotate: -2, scale: 1.04 }}
+              transition={{ duration: 0.8, delay: 0.25 }}
+              className="absolute left-10 top-[280px] z-20 hidden bg-[#fffaf3] p-2 shadow-xl md:block"
+            >
+              <img
+                src="/decor/paperclip.png"
+                alt=""
+                onError={(e) => (e.currentTarget.style.display = "none")}
+                className="absolute left-[-10px] top-[-10px] z-50 hidden w-8 md:block"
+              />
+
+              <div
+                className="h-28 w-28 bg-[#eadcc7] bg-cover bg-center"
+                style={{ backgroundImage: "url('/images/project-1.jpg')" }}
+              />
+              <p className="mt-2 text-center font-serif text-sm italic text-[#3a2b28]">
+                story concept
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ rotate: 6, opacity: 0, y: 20 }}
+              animate={{ rotate: 6, opacity: 1, y: 0 }}
+              whileHover={{ rotate: 2, scale: 1.04 }}
+              transition={{ duration: 0.8, delay: 0.35 }}
+              className="absolute left-20 bottom-24 z-20 hidden bg-[#fffaf3] p-2 shadow-xl lg:block"
+            >
+              <img
+                src="/decor/paperclip.png"
+                alt=""
+                onError={(e) => (e.currentTarget.style.display = "none")}
+                className="absolute right-[-8px] top-[-10px] z-50 hidden w-8 md:block"
+              />
+
+              <div
+                className="h-24 w-32 bg-[#eadcc7] bg-cover bg-center"
+                style={{ backgroundImage: "url('/images/project-2.jpg')" }}
+              />
+              <p className="mt-2 text-center font-serif text-sm italic text-[#3a2b28]">
+                branding
+              </p>
+            </motion.div>
+
+            <motion.div
+              animate={{ rotate: [-2, 2, -2] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute bottom-24 right-10 z-40 hidden md:block"
+            >
+              <Stamp>
+                Creative
+                <br />
+                2026
+                <br />
+                Portfolio
+              </Stamp>
+            </motion.div>
+
+            <motion.p
+              animate={{ x: [0, 8, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute bottom-8 left-10 z-20 hidden font-serif text-5xl italic text-[#c47777]/70 lg:block"
+            >
+              collecting ideas ♡
+            </motion.p>
+          </div>
         </div>
       </div>
     </section>
@@ -449,7 +855,7 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="relative z-20 -mt-28 overflow-visible px-6 py-24 md:px-10 lg:px-14">
+    <section id="about" className="relative z-20 -mt-28 overflow-visible px-6 py-28 md:px-10 lg:px-14">
       <PaperLayer className="left-6 top-10 h-[90%] w-[94%] rotate-[1deg] bg-[#f7eadb]" />
       <PaperLayer className="right-20 bottom-10 hidden h-48 w-72 rotate-[-4deg] bg-[#a8b39b]/35 lg:block" />
       <Decor src="/decor/sparkle.png" float className="right-12 top-12 hidden w-16 rotate-12 md:block" />
@@ -458,7 +864,6 @@ function About() {
         <div className="relative min-h-[520px]">
           <Polaroid image="/images/about.jpg" caption="a little piece of my journey" className="absolute left-0 top-8 w-[300px] rotate-[-5deg] sm:w-[380px]" />
 
-        
         </div>
 
         <div className="relative bg-[#fffaf3] p-7 shadow-2xl md:p-10">
@@ -502,7 +907,7 @@ function Projects() {
   }
 
   return (
-    <section id="projects" className="relative z-30 -mt-20 overflow-visible px-6 py-24 md:px-10 lg:px-14">
+    <section id="projects" className="relative z-30 -mt-20 overflow-visible px-6 py-28 md:px-10 lg:px-14">
       <PaperLayer className="right-5 top-8 h-[92%] w-[95%] rotate-[-1deg] bg-[#f5eadc]" />
       <PaperLayer className="left-16 top-24 hidden h-40 w-72 rotate-[4deg] bg-[#e8a7b2]/35 md:block" />
 
@@ -559,17 +964,23 @@ function Projects() {
 
 function Process() {
   return (
-    <section id="process" className="relative z-20 -mt-16 overflow-visible px-6 py-24 text-[#fff8ef] md:px-10 lg:px-14">
+    <section id="process" className="relative z-20 -mt-16 overflow-visible px-6 py-28 text-[#fff8ef] md:px-10 lg:px-14">
       <PaperLayer className="left-4 top-10 h-[90%] w-[96%] rotate-[1deg] bg-[#6f7a61]" />
       <Decor src="/decor/flower.png" float className="right-10 top-10 hidden w-20 opacity-80 md:block" />
 
       <div className="relative z-10 mx-auto grid max-w-[1400px] gap-8 lg:grid-cols-[280px_1fr]">
         <div>
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#f1d1c7]">Behind the scenes</p>
-          <h2 className="font-serif text-5xl leading-tight md:text-6xl">My Process</h2>
-          <p className="mt-5 text-sm leading-relaxed text-white/80">
-            I build from research to design, from feedback to iteration, and from prototype to final product.
-          </p>
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#c47777]">
+  Behind the scenes
+</p>
+          <h2 className="font-serif text-5xl leading-tight text-[#2d211d] md:text-6xl">
+    My Process
+  </h2>
+
+  <p className="mt-5 text-sm leading-relaxed text-[#4d3b35]">
+    I build from research to design, from feedback to iteration, and from prototype to final product.
+  </p>
+
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
@@ -599,7 +1010,7 @@ function Process() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative z-10 -mt-16 overflow-visible px-6 py-24 md:px-10 lg:px-14">
+    <section id="contact" className="relative z-10 -mt-16 overflow-visible px-6 py-28 md:px-10 lg:px-14">
       <PaperLayer className="right-6 top-8 h-[90%] w-[94%] rotate-[-1deg] bg-[#f5eadc]" />
 
       <div className="relative z-10 mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -659,9 +1070,15 @@ export default function App() {
         <Texture />
 
         <Reveal><Hero /></Reveal>
-        <Reveal><About /></Reveal>
+        <ArchiveMarquee />
+        <Reveal><FeaturedCasePreview /></Reveal>
         <Reveal><Projects /></Reveal>
+        <Reveal><About /></Reveal>
+        <Reveal><WhatICreate /></Reveal>
+        <Reveal><DesignValues /></Reveal>
         <Reveal><Process /></Reveal>
+        <Reveal><FeedbackWall /></Reveal>
+        <Reveal><FinalCTA /></Reveal>
         <Reveal><Contact /></Reveal>
 
         <footer className="relative z-20 bg-[#2d211d] px-8 py-5 text-xs text-[#fff8ef]/70 md:flex md:justify-between">
