@@ -592,8 +592,7 @@ function Hero() {
       <Texture />
 
       <PaperLayer className="left-3 top-10 h-[88%] w-[96%] rotate-[-1deg] bg-[#f5eadc]" />
-      <Decor src="/decor/sparkle.png" float className="left-1/2 top-24 hidden w-14 md:block" />
-      <Decor src="/decor/heart.png" float className="bottom-20 left-14 hidden w-14 -rotate-12 lg:block" />
+      <Decor src="/decor/heart.png" float className="bottom-20 left-14 hidden w-16 -rotate-12 lg:block" />
 
       <header className="relative z-40 mx-auto flex max-w-[1500px] items-center justify-between gap-4">
         <div className="relative rotate-[-2deg] bg-[#fff8ef] px-7 py-4 shadow-xl">
@@ -656,21 +655,24 @@ function Hero() {
               </motion.h1>
 
               <motion.h2
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.85, delay: 0.25 }}
-                className="mt-8 max-w-3xl border-l-4 border-[#c47777] pl-6 font-serif text-3xl leading-[1] text-[#3a2b28] md:text-5xl"
-              >
-                Designing digital experiences with softness, structure and story.
-              </motion.h2>
+  initial={{ opacity: 0, y: 18 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.85, delay: 0.25 }}
+  className="mt-8 max-w-3xl border-l-4 border-[#c47777] pl-6 font-serif text-lg leading-[1.2] text-[#3a2b28] md:text-xl"
+>
+  UX/UI Designer • Front-end Developer
+</motion.h2>
 
-              <p className="mt-7 max-w-xl text-lg leading-relaxed text-[#4d3b35]">
-                A romantic but powerful showcase of my projects, process, feedback,
-                technical growth and personal development as an ICT Media Design student.
+
+
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#4d3b35]">
+                Creating thoughtful digital experiences through design, research and technology.
+
+                Explore my projects, process, technical skills and growth as a creative developer and designer.
               </p>
 
               <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
-                {["UX/UI", "React", "Story", "Testing"].map((item) => (
+                {["Creative", "Curious", "Designer", "Developer"].map((item) => (
                   <span
                     key={item}
                     className="bg-[#f2d6dc] px-3 py-3 text-center text-xs font-bold uppercase tracking-[0.14em] text-[#3a2b28] shadow-md"
@@ -781,7 +783,7 @@ function Hero() {
               </p>
             </motion.div>
 
-            <div className="absolute left-14 top-[230px] z-30 hidden md:block">
+            <div className="absolute left-14 top-[200px] z-30 hidden md:block">
               <img
                 src="/decor/ticket.png"
                 alt=""
@@ -834,6 +836,15 @@ function Hero() {
             />
 
             <motion.img
+              src="/decor/computer.png"
+              alt=""
+              animate={{ y: [0, -2, 0], rotate: [12, 12, 12] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+              onError={(e) => (e.currentTarget.style.display = "none")}
+              className="absolute -right-7 top-[400px] z-[75] hidden w-45 md:block"
+            />
+
+            <motion.img
               src="/decor/sticker-flower-2.png"
               alt=""
               animate={{ y: [0, -6, 0], rotate: [12, 16, 12] }}
@@ -847,7 +858,7 @@ function Hero() {
               animate={{ rotate: -7, opacity: 1, y: 0 }}
               whileHover={{ rotate: -2, scale: 1.04 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="absolute left-12 top-[580px] z-35 hidden bg-[#fffaf3] p-3 shadow-xl md:block"
+              className="absolute left-15 top-[500px] z-35 hidden bg-[#fffaf3] p-3 shadow-xl md:block"
             >
               <img
                 src="/decor/paperclip.png"
@@ -860,12 +871,12 @@ function Hero() {
                 src="/decor/sticker-butterfly.png"
                 alt=""
                 onError={(e) => (e.currentTarget.style.display = "none")}
-                className="absolute right-[-22px] top-[-22px] z-[80] w-25 rotate-[15deg]"
+                className="absolute right-[-30px] top-[-55px] z-[80] w-30 rotate-[20deg]"
               />
 
               <div
                 className="h-28 w-28 bg-[#eadcc7] bg-cover bg-center"
-                style={{ backgroundImage: "url('/images/project-1.jpg')" }}
+                style={{ backgroundImage: "url('/decor/about.jpg')" }}
               />
 
               <p className="mt-2 text-center font-serif text-sm italic text-[#3a2b28]">
@@ -887,7 +898,7 @@ function Hero() {
               animate={{ rotate: 6, opacity: 1, y: 0 }}
               whileHover={{ rotate: 2, scale: 1.04 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="absolute right-12 bottom-22 z-40 hidden bg-[#fffaf3] p-3 shadow-xl lg:block"
+              className="absolute right-6 bottom-8 z-40 hidden bg-[#fffaf3] p-3 shadow-xl lg:block"
             >
               <img
                 src="/decor/paperclip.png"
@@ -906,7 +917,7 @@ function Hero() {
               </p>
             </motion.div>
 
-            <div className="absolute left-12 bottom-8 z-30 hidden bg-[#efc8d1] p-5 shadow-xl lg:block">
+            <div className="absolute left-12 bottom-10 z-30 hidden bg-[#efc8d1] p-5 shadow-xl lg:block">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#2d211d]">
                 Archive Log
               </p>
@@ -922,14 +933,14 @@ function Hero() {
             <motion.div
               animate={{ rotate: [-2, 2, -2] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-10 right-[230px] z-30 hidden md:block"
+              className="absolute bottom-0 right-[190px] z-30 hidden md:block"
             >
               <div className="relative">
                 <img
                   src="/decor/stamp.png"
                   alt=""
                   onError={(e) => (e.currentTarget.style.display = "none")}
-                  className="w-26 rotate-[4deg] drop-shadow-lg"
+                  className="w-30 rotate-[4deg] drop-shadow-lg"
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center font-serif text-[8px] uppercase tracking-[0.12em] text-[#7b4d45]">
                   Creative
